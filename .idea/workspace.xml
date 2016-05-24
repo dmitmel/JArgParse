@@ -2,8 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9631d1e8-1adc-456b-9256-3477449a9880" name="Default" comment="Initial commit&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/jar/JArgParse-1.0-sources.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/jar/JArgParse-1.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/main/classes/org/jargparse/ArgumentExistsException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/main/classes/org/jargparse/ArgumentList$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/main/classes/org/jargparse/ArgumentList$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/main/classes/org/jargparse/ArgumentList$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/main/classes/org/jargparse/ArgumentList.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/main/classes/org/jargparse/ArgumentParser$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/main/classes/org/jargparse/ArgumentParser$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/main/classes/org/jargparse/ArgumentParser$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/main/classes/org/jargparse/ArgumentParser.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/main/classes/org/jargparse/MissingPositionalsException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/main/classes/org/jargparse/UnexpectedArgumentException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/main/classes/org/jargparse/UnexpectedPositionalsException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/main/classes/org/jargparse/argtypes/Argument$Type.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/main/classes/org/jargparse/argtypes/Argument.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/main/classes/org/jargparse/argtypes/Flag.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/main/classes/org/jargparse/argtypes/Option.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/main/classes/org/jargparse/argtypes/Positional$Usage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/main/classes/org/jargparse/argtypes/Positional.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/main/classes/org/jargparse/util/Arrays$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/main/classes/org/jargparse/util/Arrays.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/main/classes/org/jargparse/util/Lists.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/main/classes/org/jargparse/util/Maps.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/main/classes/org/jargparse/util/Pair.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/main/classes/org/jargparse/util/Predicate.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/main/classes/org/jargparse/util/Strings.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/main/classes/org/jargparse/util/formatting/SimpleStringToken.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/main/classes/org/jargparse/util/formatting/StringToken$Type.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/main/classes/org/jargparse/util/formatting/StringToken.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/main/classes/org/jargparse/util/formatting/StringTokenBuilder.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/main/classes/org/jargparse/util/formatting/StyledStringToken.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/test/classes/tests/FormattingTests.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.build/test/classes/tests/MainTests.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/JUnit_4_12.xml" afterPath="$PROJECT_DIR$/.idea/libraries/JUnit_4_12.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JArgParse.iml" afterPath="$PROJECT_DIR$/JArgParse.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
     </list>
     <ignored path="JArgParse.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,21 +61,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="LICENSE" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LICENSE">
+      <file leaf-file-name="build.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/build.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-300">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="60">
+              <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -92,7 +118,6 @@
         <option value="$PROJECT_DIR$/src/main/java/jargparse/argtypes/Option.java" />
         <option value="$PROJECT_DIR$/src/main/java/jargparse/UnexpectedArgumentException.java" />
         <option value="$PROJECT_DIR$/src/main/java/jargparse/util/Predicate.java" />
-        <option value="$PROJECT_DIR$/build.xml" />
         <option value="$PROJECT_DIR$/src/main/java/jargparse/util/Lists.java" />
         <option value="$PROJECT_DIR$/src/main/java/jargparse/MissingPositionalsException.java" />
         <option value="$PROJECT_DIR$/src/main/java/jargparse/UnexpectedPositionalsException.java" />
@@ -121,14 +146,15 @@
         <option value="$PROJECT_DIR$/src/main/java/org/jargparse/ArgumentParser.java" />
         <option value="$PROJECT_DIR$/src/test/java/tests/MainTests.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/build.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
-    <option name="y" value="-4" />
+    <option name="y" value="24" />
     <option name="width" value="1855" />
-    <option name="height" value="1084" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -172,6 +198,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -353,7 +380,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -853,12 +879,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Run_tests - 2016.05.24 at 06h 22m 37s.xml">
-      <configuration name="Run tests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Run_tests - 2016.05.24 at 06h 23m 05s.xml">
-      <configuration name="Run tests" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="Run_tests - 2016.05.24 at 06h 26m 21s.xml">
       <configuration name="Run tests" configurationId="JUnit" />
     </history-entry>
@@ -883,36 +903,42 @@
     <history-entry file="Run_tests - 2016.05.24 at 06h 53m 50s.xml">
       <configuration name="Run tests" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="Run_tests - 2016.05.24 at 16h 34m 40s.xml">
+      <configuration name="Run tests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Run_tests - 2016.05.24 at 16h 35m 03s.xml">
+      <configuration name="Run tests" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27529022" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2819237" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2498618" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2498618" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4337852" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2498618" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cabal" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946378" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4337852" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="165" y="124" width="1655" height="856" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="GhcMod" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1152,14 +1178,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="64" selection-start-line="5" selection-start-column="64" selection-end-line="5" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/Collections.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
@@ -1321,18 +1339,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LICENSE">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-300">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LICENSE">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-300">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
           <folding />
         </state>
       </provider>
