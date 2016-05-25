@@ -153,7 +153,7 @@ public class ArgumentParser {
 
     private void retrieveFlagOrPositional(String stringArg) {
         if (Flag.isStringArgumentFlag(stringArg))
-            Maps.set(flagValues, stringArg, true);
+            flagValues.put(stringArg, true);
         else
             positionalValues.add(stringArg);
     }
@@ -169,7 +169,7 @@ public class ArgumentParser {
 
     private void disableNotReceivedOption(Option patternArgument) {
         if (patternArgument.defaultValue != null)
-            Maps.set(optionValues, patternArgument.name, patternArgument.defaultValue);
+            optionValues.put(patternArgument.name, patternArgument.defaultValue);
     }
 
     private boolean isOptionSet(Argument patternArgument) {
@@ -177,6 +177,7 @@ public class ArgumentParser {
     }
 
     private void disableNotReceivedFlag(Flag patternArgument) {
+        flagValues.put(patternArgument.getSuitableName(), false);
         Maps.set(flagValues, patternArgument.getSuitableName(), false);
     }
 
