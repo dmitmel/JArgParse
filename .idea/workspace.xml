@@ -2,45 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9631d1e8-1adc-456b-9256-3477449a9880" name="Default" comment="Initial commit&#10;">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/jar/JArgParse-1.0-sources.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/jar/JArgParse-1.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/ArgumentExistsException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/ArgumentList$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/ArgumentList$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/ArgumentList$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/ArgumentList.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/ArgumentParser$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/ArgumentParser$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/ArgumentParser$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/ArgumentParser.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/MissingPositionalsException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/UnexpectedArgumentException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/UnexpectedPositionalsException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/argtypes/Argument$Type.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/argtypes/Argument.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/argtypes/Flag.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/argtypes/Option.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/argtypes/Positional$Usage.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/argtypes/Positional.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/util/Arrays$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/util/Arrays.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/util/Lists.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/util/Maps.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/util/Pair.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/util/Predicate.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/util/Strings.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/util/formatting/SimpleStringToken.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/util/formatting/StringToken$Type.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/util/formatting/StringToken.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/util/formatting/StringTokenBuilder.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/util/formatting/StyledStringToken.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/test/classes/tests/FormattingTests.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/test/classes/tests/MainTests.class" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/jargparse/ArgumentParseException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/jar/JArgParse-1.0-sources.jar" afterPath="$PROJECT_DIR$/build/jar/JArgParse-1.0-sources.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/jar/JArgParse-1.0.jar" afterPath="$PROJECT_DIR$/build/jar/JArgParse-1.0.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/ArgumentParser.class" afterPath="$PROJECT_DIR$/build/main/classes/org/jargparse/ArgumentParser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/MissingPositionalsException.class" afterPath="$PROJECT_DIR$/build/main/classes/org/jargparse/MissingPositionalsException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/UnexpectedArgumentException.class" afterPath="$PROJECT_DIR$/build/main/classes/org/jargparse/UnexpectedArgumentException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/UnexpectedPositionalsException.class" afterPath="$PROJECT_DIR$/build/main/classes/org/jargparse/UnexpectedPositionalsException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/util/Lists.class" afterPath="$PROJECT_DIR$/build/main/classes/org/jargparse/util/Lists.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/test/classes/tests/MainTests.class" afterPath="$PROJECT_DIR$/build/test/classes/tests/MainTests.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/ArgumentList.java" afterPath="$PROJECT_DIR$/src/main/java/org/jargparse/ArgumentList.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/ArgumentParser.java" afterPath="$PROJECT_DIR$/src/main/java/org/jargparse/ArgumentParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/argtypes/Argument.java" afterPath="$PROJECT_DIR$/src/main/java/org/jargparse/argtypes/Argument.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/argtypes/Positional.java" afterPath="$PROJECT_DIR$/src/main/java/org/jargparse/argtypes/Positional.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/MissingPositionalsException.java" afterPath="$PROJECT_DIR$/src/main/java/org/jargparse/MissingPositionalsException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/UnexpectedArgumentException.java" afterPath="$PROJECT_DIR$/src/main/java/org/jargparse/UnexpectedArgumentException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/UnexpectedPositionalsException.java" afterPath="$PROJECT_DIR$/src/main/java/org/jargparse/UnexpectedPositionalsException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/util/Lists.java" afterPath="$PROJECT_DIR$/src/main/java/org/jargparse/util/Lists.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/tests/MainTests.java" afterPath="$PROJECT_DIR$/src/test/java/tests/MainTests.java" />
     </list>
     <ignored path="JArgParse.iws" />
@@ -63,11 +39,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ArgumentParser.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ArgumentParser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/jargparse/ArgumentParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="130" column="39" selection-start-line="130" selection-start-column="39" selection-end-line="130" selection-end-column="39" />
+            <state relative-caret-position="170">
+              <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -75,11 +51,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Lists.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/jargparse/util/Lists.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="25" column="57" selection-start-line="25" selection-start-column="57" selection-end-line="25" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="MainTests.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/tests/MainTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+            <state relative-caret-position="232">
+              <caret line="93" column="102" selection-start-line="93" selection-start-column="102" selection-end-line="93" selection-end-column="102" />
               <folding />
             </state>
           </provider>
@@ -110,8 +96,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="/usr/lib/jvm/java-8-oracle/src.zip!/java/util/Arrays.java" />
-        <option value="$PROJECT_DIR$/src/test/java/tests/Main.java" />
         <option value="/usr/lib/jvm/java-8-oracle/src.zip!/java/lang/Character.java" />
         <option value="$PROJECT_DIR$/src/main/java/jargparse/util/Strings.java" />
         <option value="/usr/lib/jvm/java-8-oracle/jre/lib/deploy.jar!/com/oracle/deploy/update/Updater.class" />
@@ -135,10 +119,6 @@
         <option value="$PROJECT_DIR$/src/main/java/jargparse/UnexpectedPositionalsException.java" />
         <option value="$PROJECT_DIR$/src/main/java/jargparse/ArgumentList.java" />
         <option value="$PROJECT_DIR$/src/main/java/jargparse/ArgumentParser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/jargparse/ArgumentExistsException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/jargparse/MissingPositionalsException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/jargparse/UnexpectedArgumentException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/jargparse/UnexpectedPositionalsException.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jargparse/argtypes/Flag.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jargparse/util/Arrays.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jargparse/util/Maps.java" />
@@ -157,10 +137,16 @@
         <option value="$PROJECT_DIR$/src/main/java/org/jargparse/argtypes/Argument.java" />
         <option value="/usr/lib/jvm/java-8-oracle/src.zip!/java/util/OptionalDouble.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jargparse/util/ExtendedIterator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/jargparse/util/Lists.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jargparse/ArgumentList.java" />
-        <option value="$PROJECT_DIR$/src/test/java/tests/MainTests.java" />
+        <option value="/usr/lib/jvm/java-8-oracle/jre/lib/deploy.jar!/com/sun/deploy/util/ArgumentParsingUtil.class" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jargparse/ArgumentParseException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jargparse/MissingPositionalsException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jargparse/UnexpectedPositionalsException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jargparse/UnexpectedArgumentException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jargparse/ArgumentExistsException.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jargparse/ArgumentParser.java" />
+        <option value="$PROJECT_DIR$/src/test/java/tests/MainTests.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jargparse/util/Lists.java" />
       </list>
     </option>
   </component>
@@ -226,7 +212,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -407,8 +394,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -425,11 +411,12 @@
     <key name="MoveMembersDialog.RECENTS_KEY">
       <recent name="jargparse.argtypes.Argument" />
     </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.jargparse" />
+      <recent name="jargparse" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/JUnit" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="jargparse" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.Run tests">
@@ -908,17 +895,14 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Run_tests - 2016.05.24 at 21h 44m 03s.xml">
-      <configuration name="Run tests" configurationId="JUnit" />
+    <history-entry file="MainTests_testParsingUnexpectedPositionals - 2016.05.25 at 08h 10m 55s.xml">
+      <configuration name="MainTests.testParsingUnexpectedPositionals" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Run_tests - 2016.05.24 at 22h 16m 09s.xml">
-      <configuration name="Run tests" configurationId="JUnit" />
+    <history-entry file="MainTests_testParsingUnexpectedPositionals - 2016.05.25 at 08h 12m 06s.xml">
+      <configuration name="MainTests.testParsingUnexpectedPositionals" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Run_tests - 2016.05.24 at 22h 17m 46s.xml">
-      <configuration name="Run tests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Run_tests - 2016.05.24 at 22h 20m 19s.xml">
-      <configuration name="Run tests" configurationId="JUnit" />
+    <history-entry file="MainTests_testParsingUnexpectedPositionals - 2016.05.25 at 08h 12m 37s.xml">
+      <configuration name="MainTests.testParsingUnexpectedPositionals" configurationId="JUnit" />
     </history-entry>
     <history-entry file="Run_tests - 2016.05.24 at 22h 20m 39s.xml">
       <configuration name="Run tests" configurationId="JUnit" />
@@ -938,10 +922,13 @@
     <history-entry file="Run_tests - 2016.05.25 at 07h 07m 06s.xml">
       <configuration name="Run tests" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="Run_tests - 2016.05.25 at 07h 55m 07s.xml">
+      <configuration name="Run tests" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -950,12 +937,12 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29187396" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30514097" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2498618" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2498618" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1012,18 +999,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/jargparse/ArgumentParser.java</url>
-          <line>97</line>
-          <properties />
-          <option name="timeStamp" value="89" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="90" />
+      <option name="time" value="91" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1042,20 +1021,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/net/CookieManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="116" column="13" selection-start-line="116" selection-start-column="13" selection-end-line="116" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/net/HttpCookie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="61" column="50" selection-start-line="61" selection-start-column="50" selection-end-line="61" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.ideaLibSources/hamcrest-core-1.3-sources.jar!/org/hamcrest/BaseDescription.java" />
     <entry file="jar://$PROJECT_DIR$/JUnit/hamcrest-core-1.3.jar!/org/hamcrest/BaseMatcher.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -1159,34 +1124,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
           <caret line="4396" column="29" selection-start-line="4396" selection-start-column="29" selection-end-line="4396" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jargparse/ArgumentExistsException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jargparse/MissingPositionalsException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jargparse/UnexpectedArgumentException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jargparse/UnexpectedPositionalsException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -1323,7 +1260,7 @@
         <state relative-caret-position="230">
           <caret line="417" column="0" selection-start-line="417" selection-start-column="0" selection-end-line="417" selection-end-column="0" />
           <folding>
-            <element signature="e#15459#15460#0" expanded="true" />
+            <element signature="e#15459#15460#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1356,9 +1293,9 @@
         <state relative-caret-position="608">
           <caret line="61" column="84" selection-start-line="61" selection-start-column="84" selection-end-line="61" selection-end-column="84" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2130#2427#0" expanded="true" />
-            <element signature="e#2426#2427#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#2130#2427#0" expanded="false" />
+            <element signature="e#2426#2427#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1371,16 +1308,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jargparse/util/ExtendedIterator.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jargparse/util/Lists.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jargparse/ArgumentList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-228">
@@ -1389,21 +1316,75 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/jre/lib/deploy.jar!/com/sun/deploy/util/ArgumentParsingUtil.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-720">
+          <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jargparse/ArgumentParseException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jargparse/MissingPositionalsException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="6" column="71" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jargparse/UnexpectedPositionalsException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="6" column="74" selection-start-line="6" selection-start-column="74" selection-end-line="6" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jargparse/UnexpectedArgumentException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="71" selection-start-line="4" selection-start-column="71" selection-end-line="4" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jargparse/ArgumentExistsException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="61" selection-start-line="2" selection-start-column="61" selection-end-line="2" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/tests/MainTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+        <state relative-caret-position="232">
+          <caret line="93" column="102" selection-start-line="93" selection-start-column="102" selection-end-line="93" selection-end-column="102" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jargparse/ArgumentParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="130" column="39" selection-start-line="130" selection-start-column="39" selection-end-line="130" selection-end-column="39" />
+        <state relative-caret-position="170">
+          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jargparse/util/Lists.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="25" column="57" selection-start-line="25" selection-start-column="57" selection-end-line="25" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>

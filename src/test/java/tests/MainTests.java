@@ -91,7 +91,7 @@ public class MainTests extends Assert {
 
     @Test(expected = UnexpectedPositionalsException.class)
     public void testParsingUnexpectedPositionals() {
-        new ArgumentParser("my_cool_app", "some app description", "some app version").run("a", "b");
+        new ArgumentParser("my_cool_app", "some app description", "some app version").run("a", "b", "c");
     }
 
     private ArgumentParser makeTestParser() {

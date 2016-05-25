@@ -183,4 +183,24 @@ public class ArgumentParser {
     private boolean isFlagSet(Argument patternArgument) {
         return !flagValues.containsKey(patternArgument.name) && !flagValues.containsKey(patternArgument.longName);
     }
+
+    public String parsingExceptionToString(ArgumentParseException e) {
+        String usageMessage = argumentList.constructUsageMessage();
+        StringBuilder builder = new StringBuilder(usageMessage);
+        builder.append('\n').append(appName).append(": ");
+
+        if (e instanceof UnexpectedArgumentException) {
+            builder.append("unexpected ");
+            builder.append(((UnexpectedArgumentException) e).getType().toString().toLowerCase());
+            builder.append(" \"").append(((UnexpectedArgumentException) e).getArgument()).append('\"');
+        } else if (e instanceof UnexpectedPositionalsException) {
+            builder.append("unexpected positionals: ");
+            builder.append(Lists.join(((UnexpectedPositionalsException) e).getPositionals(), ", "));
+        } else if (e instanceof MissingPositionalsException) {
+            builder.append("missing positionals: ");
+            builder.append(Lists.join(((MissingPositionalsException) e).getPositionals(), ", "));
+        }
+
+        return builder.toString();
+    }
 }

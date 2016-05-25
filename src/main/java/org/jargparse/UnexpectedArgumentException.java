@@ -2,7 +2,7 @@ package org.jargparse;
 
 import org.jargparse.argtypes.Argument;
 
-public class UnexpectedArgumentException extends RuntimeException {
+public class UnexpectedArgumentException extends ArgumentParseException {
     private String argument;
     public String getArgument() {
         return argument;

@@ -4,7 +4,7 @@ import org.jargparse.argtypes.Positional;
 
 import java.util.List;
 
-public class MissingPositionalsException extends RuntimeException {
+public class MissingPositionalsException extends ArgumentParseException {
     private List<Positional> positionals;
     public List<Positional> getPositionals() {
         return positionals;

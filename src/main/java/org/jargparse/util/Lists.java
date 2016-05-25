@@ -13,10 +13,20 @@ public class Lists {
         return filtered;
     }
 
-    public static <I, O> List<O> cast(List<I> in) {
-        List<O> out = new ArrayList<>(0);
-        for (I item : in)
-            out.add((O) item);
+    public static <IT, OT> List<OT> cast(List<IT> in) {
+        List<OT> out = new ArrayList<>(0);
+        for (IT item : in)
+            out.add((OT) item);
         return out;
+    }
+
+    public static <T> String join(List<T> list, String separator) {
+        StringBuilder builder = new StringBuilder(0);
+        if (list.size() > 1)
+            for (T item : list.subList(0, list.size() - 1))
+                builder.append(item).append(separator);
+        if (list.size() > 0)
+            builder.append(list.get(list.size() - 1));
+        return builder.toString();
     }
 }
