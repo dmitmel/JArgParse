@@ -4,7 +4,6 @@ import org.jargparse.argtypes.Argument;
 import org.jargparse.argtypes.Flag;
 import org.jargparse.argtypes.Option;
 import org.jargparse.argtypes.Positional;
-import org.jargparse.util.Predicate;
 import org.jargparse.util.Lists;
 import org.jargparse.util.Strings;
 import org.jargparse.util.formatting.StringTokenBuilder;
@@ -12,7 +11,7 @@ import org.jargparse.util.formatting.StringTokenBuilder;
 import java.util.*;
 
 public class ArgumentList implements List<Argument> {
-    public static final int RIGHT_MARGIN = 80;
+    public static final int RIGHT_MARGIN_FOR_TRANSLATING_TO_STRING = 80;
     public static final String INDENT_BEFORE_ARGUMENT_HELP_LINE = "  ";
 
     private final String appDescription;
@@ -156,7 +155,7 @@ public class ArgumentList implements List<Argument> {
         helpMessageBuilder.append('\n');
         addNonPositionalsHelpSection();
 
-        return helpMessageBuilder.joinWithRightMargin(RIGHT_MARGIN);
+        return helpMessageBuilder.joinWithRightMargin(RIGHT_MARGIN_FOR_TRANSLATING_TO_STRING);
     }
 
     private void addPositionalsHelpSection() {
@@ -249,7 +248,7 @@ public class ArgumentList implements List<Argument> {
     }
 
     public String constructUsageMessage() {
-        return usageAsTokenBuilder().joinWithRightMargin(RIGHT_MARGIN);
+        return usageAsTokenBuilder().joinWithRightMargin(RIGHT_MARGIN_FOR_TRANSLATING_TO_STRING);
     }
 
     private StringTokenBuilder usageAsTokenBuilder() {

@@ -179,7 +179,6 @@ public class ArgumentParser {
 
     private void disableNotReceivedFlag(Flag patternArgument) {
         flagValues.put(patternArgument.getSuitableName(), false);
-        Maps.set(flagValues, patternArgument.getSuitableName(), false);
     }
 
     private boolean isFlagSet(Argument patternArgument) {

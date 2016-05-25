@@ -1,6 +1,6 @@
 package org.jargparse.util.formatting;
 
-public interface StringToken {
+interface StringToken {
     String getValue();
     Type getType();
 

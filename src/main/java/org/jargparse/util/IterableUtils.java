@@ -1,15 +1,17 @@
 package org.jargparse.util;
 
-import java.util.List;
+import java.util.Iterator;
 
 public class IterableUtils {
-    public static <T> String join(List<T> list, String separator) {
+    public static <T> String join(Iterable<T> iterable, String separator) {
         StringBuilder builder = new StringBuilder(0);
-        if (list.size() > 1)
-            for (T item : list.subList(0, list.size() - 1))
-                builder.append(item).append(separator);
-        if (list.size() > 0)
-            builder.append(list.get(list.size() - 1));
+
+        for (Iterator<T> iterator = iterable.iterator(); iterator.hasNext(); ) {
+            builder.append(iterator.next());
+            if (iterator.hasNext())
+                builder.append(separator);
+        }
+
         return builder.toString();
     }
 }

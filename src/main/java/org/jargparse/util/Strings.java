@@ -19,12 +19,14 @@ public class Strings {
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             currentLine.append(c);
-            if (c == '\n' || c == '\r') {
-                lines.add(currentLine.toString());
-                currentLine = new StringBuilder("");
-            } if ((c == '\n' && getNextChar(s, i) == '\r') || (c == '\r' && getNextChar(s, i) == '\n')) {
+
+            // Testing Windows' CRLF newline separators
+            if ((c == '\n' && getNextChar(s, i) == '\r') || (c == '\r' && getNextChar(s, i) == '\n')) {
                 i++;
                 lines.add(currentLine.toString() + s.charAt(i));
+                currentLine = new StringBuilder("");
+            } else if (c == '\n' || c == '\r') {
+                lines.add(currentLine.toString());
                 currentLine = new StringBuilder("");
             }
         }
@@ -45,6 +47,11 @@ public class Strings {
         return out.toString();
     }
 
+    /**
+     * Returns last character of string, if can't - returns {@code -1}.
+     * @param s string
+     * @return last character of string, if can't - {@code -1}
+     */
     public static int lastChar(String s) {
         if (s != null && s.length() > 0)
             return s.charAt(s.length() - 1);

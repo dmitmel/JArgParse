@@ -4,7 +4,6 @@ import org.jargparse.ArgumentList;
 import org.jargparse.util.Predicate;
 
 public abstract class Argument {
-    // Fields that will be used in any sub-classes
     public String name;             // Field is ignored in positional args
     public String helpInfo;
     public String longName;         // Field is ignored in positional args
@@ -15,10 +14,13 @@ public abstract class Argument {
         return name.toUpperCase().replace('-', '_');
     }
 
-    public static Argument findFromArgumentListByName(ArgumentList argumentList, Type type, String receivedName) {
+    // You can see shortenings of this method (you don't need to specify type)
+    public static Argument findFromArgumentListByName(ArgumentList argumentList, Type type,
+                                                      String receivedName) {
         for (Argument argument : argumentList)
             if (argument.getType() == type)
-                if (argument.nameEquals(receivedName) || argument.longNameEquals(receivedName))
+                if ((argument.name != null && argument.name.equals(receivedName)) ||
+                        (argument.longName != null && argument.longName.equals(receivedName)))
                     return argument;
 
         return null;
@@ -43,6 +45,13 @@ public abstract class Argument {
         return getType() != Type.POSITIONAL && name != null && name.startsWith("-");
     }
 
+    /**
+     * Returns name of argument if it's valid, otherwise returns long name. If neither long name nor short aren't
+     * valid - throws {@link IllegalStateException}.
+     *
+     * @return name of argument if it's valid, otherwise returns long name
+     * @throws IllegalStateException if neither long name nor short aren't valid
+     */
     public String getSuitableName() {
         String suitable;
         if (isNameValid())
@@ -50,7 +59,7 @@ public abstract class Argument {
         else if (isLongNameValid())
             suitable = longName;
         else
-            throw new IllegalStateException("argument " + this + " doesn\'t contain any names");
+            throw new IllegalStateException("argument \"" + this + "\" doesn\'t contain any suitable names");
         return suitable;
     }
 
