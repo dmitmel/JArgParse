@@ -26,19 +26,6 @@ public class ArgumentList implements List<Argument> {
     private StringTokenBuilder usageMessageBuilder;
     private String newlineSpacingForUsageArgs;
 
-    static final org.jargparse.util.Predicate<Argument> POSITIONALS_FILTER_PREDICATE = new Predicate<Argument>() {
-        @Override
-        public boolean test(Argument argument) {
-            return argument.getType() == Argument.Type.POSITIONAL;
-        }
-    };
-    private static final org.jargparse.util.Predicate<Argument> NON_POSITIONALS_FILTER_PREDICATE = new Predicate<Argument>() {
-        @Override
-        public boolean test(Argument argument) {
-            return !POSITIONALS_FILTER_PREDICATE.test(argument);
-        }
-    };
-
     public ArgumentList(String appName, String appDescription, Argument... arguments) {
         this(appName, appDescription, new ArrayList<>(Arrays.asList(arguments)));
     }
@@ -173,7 +160,8 @@ public class ArgumentList implements List<Argument> {
     }
 
     private void addPositionalsHelpSection() {
-        List<Argument> onlyPositionals = Lists.filter(this, POSITIONALS_FILTER_PREDICATE);
+        List<Argument> onlyPositionals = Lists.filter(this,
+                Argument.Type.makePredicate(Argument.Type.POSITIONAL));
         if (onlyPositionals.size() > 0) {
             helpMessageBuilder.append("positional arguments:\n");
             for (Argument positional : onlyPositionals)
@@ -190,7 +178,8 @@ public class ArgumentList implements List<Argument> {
     }
 
     private void addNonPositionalsHelpSection() {
-        List<Argument> nonPositionals = Lists.filter(this, NON_POSITIONALS_FILTER_PREDICATE);
+        List<Argument> nonPositionals = Lists.filter(this,
+                Argument.Type.makePredicate(Argument.Type.FLAG, Argument.Type.OPTION));
         if (nonPositionals.size() > 0) {
             helpMessageBuilder.append("optional arguments:\n");
             for (Argument nonPositional : nonPositionals) {
@@ -280,13 +269,15 @@ public class ArgumentList implements List<Argument> {
     }
 
     private void usageMessageForAllArguments() {
-        List<Argument> nonPositionals = Lists.filter(this, NON_POSITIONALS_FILTER_PREDICATE);
+        List<Argument> nonPositionals = Lists.filter(this,
+                Argument.Type.makePredicate(Argument.Type.FLAG, Argument.Type.OPTION));
         for (Argument nonPositional : nonPositionals)
             usageMessageForAnyArgument(nonPositional);
 
         usageMessageBuilder.append("\n".concat(newlineSpacingForUsageArgs));
         // Positionals must be last in this list
-        List<Argument> onlyPositionals = Lists.filter(this, POSITIONALS_FILTER_PREDICATE);
+        List<Argument> onlyPositionals = Lists.filter(this,
+                Argument.Type.makePredicate(Argument.Type.POSITIONAL));
         for (Argument positional : onlyPositionals)
             usageMessageForAnyArgument(positional);
     }

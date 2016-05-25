@@ -1,5 +1,7 @@
 package org.jargparse.argtypes;
 
+import org.jargparse.util.Predicate;
+
 public class Positional extends Argument {
     public Usage usage;
     public String defaultValue;
@@ -26,6 +28,18 @@ public class Positional extends Argument {
     }
 
     public enum Usage {
-        REQUIRED, OPTIONAL, ZERO_OR_MORE
+        REQUIRED, OPTIONAL, ZERO_OR_MORE;
+
+        public static Predicate<Positional> makePredicate(final Usage... expectedUsages) {
+            return new Predicate<Positional>() {
+                @Override
+                public boolean test(Positional t) {
+                    for (Usage type : expectedUsages)
+                        if (t.usage == type)
+                            return true;
+                    return false;
+                }
+            };
+        }
     }
 }

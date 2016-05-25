@@ -1,9 +1,6 @@
 package tests;
 
-import org.jargparse.ArgumentExistsException;
-import org.jargparse.ArgumentParser;
-import org.jargparse.MissingPositionalsException;
-import org.jargparse.UnexpectedArgumentException;
+import org.jargparse.*;
 import org.jargparse.argtypes.Flag;
 import org.jargparse.argtypes.Option;
 import org.jargparse.argtypes.Positional;
@@ -55,7 +52,8 @@ public class MainTests extends Assert {
     @Test
     public void testParsingMixedArguments() {
         Map<String, Object> result = makeTestParser()
-                .run("--some-long-flag", "required", "-V", "optional", "--number", "123", "list1", "list2", "list3");
+                .run("--some-long-flag", "required", "-V", "optional", "--number", "123", "listItem1", "listItem2",
+                        "listItem3");
         assertEquals("123", result.get("number"));
         assertEquals(false, result.get("show help"));
         assertEquals(true, result.get("some long flag"));
@@ -67,27 +65,33 @@ public class MainTests extends Assert {
         List<String> values = (List<String>) result.get("valuesList");
         assertEquals(3, values.size());
         for (int i = 0; i < 3; i++)
-            assertEquals("list" + (i + 1), values.get(i));
+            assertEquals("listItem" + (i + 1), values.get(i));
     }
 
     @Test
-    public void testWordAppendingWithStringTokenBuilders() {
-        StringTokenBuilder testing = new StringTokenBuilder();
-        testing.append("one");
-        testing.append("two");
-        testing.append("three");
-        assertEquals("one two three", testing.joinWithSeparators(" "));
+    public void testParserWithOnlyOptionalPositionals() {
+        ArgumentParser parser = new ArgumentParser("my_cool_app", "some app description", "some app version");
+        parser.addArgument(new Positional("help1", "metavar1", "parseResultKey1", Positional.Usage.OPTIONAL,
+                "defaultValue1"));
+        parser.addArgument(new Positional("help2", "metavar2", "parseResultKey2", Positional.Usage.OPTIONAL,
+                "defaultValue2"));
+
+        Map<String, Object> result1 = parser.run();
+        assertEquals("defaultValue1", result1.get("parseResultKey1"));
+        assertEquals("defaultValue2", result1.get("parseResultKey2"));
+
+        Map<String, Object> result2 = parser.run("a");
+        assertEquals("a", result2.get("parseResultKey1"));
+        assertEquals("defaultValue2", result2.get("parseResultKey2"));
+
+        Map<String, Object> result3 = parser.run("a", "b");
+        assertEquals("a", result3.get("parseResultKey1"));
+        assertEquals("b", result3.get("parseResultKey2"));
     }
 
-    @Test
-    public void testRightTextMarginWithStringTokenBuilder() {
-        StringTokenBuilder testing = new StringTokenBuilder();
-        testing.append("one");
-        testing.append("two");
-        testing.append("three");
-        testing.append("four");
-        testing.append("five");
-        assertEquals("one two \nthree four \nfive", testing.joinWithRightMargin(10));
+    @Test(expected = UnexpectedPositionalsException.class)
+    public void testParsingUnexpectedPositionals() {
+        new ArgumentParser("my_cool_app", "some app description", "some app version").run("a", "b");
     }
 
     private ArgumentParser makeTestParser() {

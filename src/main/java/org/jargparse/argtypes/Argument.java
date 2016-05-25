@@ -1,6 +1,7 @@
 package org.jargparse.argtypes;
 
 import org.jargparse.ArgumentList;
+import org.jargparse.util.Predicate;
 
 public abstract class Argument {
     // Fields that will be used in any sub-classes
@@ -56,6 +57,18 @@ public abstract class Argument {
     public abstract Type getType();
 
     public enum Type {
-        FLAG, OPTION, POSITIONAL
+        FLAG, OPTION, POSITIONAL;
+
+        public static <T extends Argument> Predicate<T> makePredicate(final Type... expectedTypes) {
+            return new Predicate<T>() {
+                @Override
+                public boolean test(T t) {
+                    for (Type type : expectedTypes)
+                        if (t.getType() == type)
+                            return true;
+                    return false;
+                }
+            };
+        }
     }
 }

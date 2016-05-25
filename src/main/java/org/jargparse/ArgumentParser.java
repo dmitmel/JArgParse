@@ -86,63 +86,50 @@ public class ArgumentParser {
     }
 
     private void putAllPositionalsToOutputData() {
-        List<Positional> onlyPositionals = Lists.cast(Lists.filter(argumentList, new Predicate<Argument>() {
-            @Override
-            public boolean test(Argument argument) {
-                return argument.getType() == Argument.Type.POSITIONAL;
-            }
-        }));
-        List<Positional> onlyRequired = Lists.filter(onlyPositionals, new Predicate<Positional>() {
-            @Override
-            public boolean test(Positional positional) {
-                return positional.usage == Positional.Usage.REQUIRED;
-            }
-        });
-        List<Positional> onlyOptional = Lists.filter(onlyPositionals, new Predicate<Positional>() {
-            @Override
-            public boolean test(Positional positional) {
-                return positional.usage == Positional.Usage.OPTIONAL;
-            }
-        });
-        Positional last = (onlyPositionals.size() > 0) ? onlyPositionals.get(onlyPositionals.size() - 1) : null;
-        Positional positionalWithZeroOrMoreUsage = (last != null && last.usage == Positional.Usage.ZERO_OR_MORE) ?
-                last : null;
+        List<Positional> onlyPositionals = Lists.cast(Lists.filter(argumentList,
+                Argument.Type.makePredicate(Argument.Type.POSITIONAL)));
+        List<Positional> onlyRequired = Lists.filter(onlyPositionals,
+                Positional.Usage.makePredicate(Positional.Usage.REQUIRED));
 
-        if (positionalValues.size() < onlyRequired.size())
-            throw new MissingPositionalsException(onlyRequired.subList(positionalValues.size(), onlyOptional.size()));
-        int endOfRequired = 0;
-        for (int i = 0; i < onlyRequired.size(); i++) {
-            output.put(onlyRequired.get(i).parseResultKey, positionalValues.get(i));
-            endOfRequired = i;
-        }
-        if (endOfRequired + 1 < positionalValues.size()) {
-            int endOfOptional = 0;
-            for (int i = 0; i < onlyOptional.size(); i++) {
-                output.put(onlyOptional.get(i).parseResultKey, positionalValues.get(endOfRequired + 1 + i));
-                endOfOptional = endOfRequired + 1 + i;
+        if (onlyRequired.size() > positionalValues.size())
+            throw new MissingPositionalsException(onlyRequired.subList(positionalValues.size(),
+                    onlyRequired.size()));
+
+        ListIterator<Positional> iterator = onlyPositionals.listIterator();
+        int i = 0;
+        while (iterator.hasNext()) {
+            Positional next = iterator.next();
+
+            switch (next.usage) {
+                case OPTIONAL:
+                    if (i >= positionalValues.size())
+                        output.put(next.parseResultKey, next.defaultValue);
+                    else
+                        output.put(next.parseResultKey, positionalValues.get(i));
+                    break;
+
+                case REQUIRED:
+                    output.put(next.parseResultKey, positionalValues.get(i));
+                    break;
+
+                case ZERO_OR_MORE:
+                    if (i < positionalValues.size()) {
+                        List<String> values = new ArrayList<>(0);
+                        for (String item : positionalValues.subList(i, positionalValues.size())) {
+                            values.add(item);
+                            i++;
+                        }
+                        output.put(next.parseResultKey, values);
+                    }
+                    break;
             }
-            // Note: positional with usage Positional.Usage#ZERO_OR_MORE can "eat" last arguments,
-            // But if it isn't present and we have arguments - throwing exception
-            if (endOfOptional + 1 < positionalValues.size()) {
-                if (positionalWithZeroOrMoreUsage != null) {
-                    List<String> items = positionalValues.subList(endOfOptional + 1, positionalValues.size());
-                    output.put(positionalWithZeroOrMoreUsage.parseResultKey, items);
-                } else
-                    throw new UnexpectedPositionalsException(positionalValues.subList(endOfOptional + 1,
-                            positionalValues.size()));
-            }
+
+            i++;
         }
 
-        if (positionalWithZeroOrMoreUsage != null &&
-                !output.containsKey(positionalWithZeroOrMoreUsage.parseResultKey))
-            output.put(positionalWithZeroOrMoreUsage.parseResultKey, Collections.emptyList());
-        registerNotReceivedOptionalPositionals(onlyOptional);
-    }
-
-    private void registerNotReceivedOptionalPositionals(List<Positional> positionals) {
-        for (Positional optional : positionals)
-            if (!output.containsKey(optional.parseResultKey))
-                output.put(optional.parseResultKey, optional.defaultValue);
+        // If iterator has next - there isn't positional with usage Positional.Usage#ZERO_OR_MORE
+        if (i < positionalValues.size())
+            throw new UnexpectedPositionalsException(positionalValues.subList(i, positionalValues.size()));
     }
 
 
