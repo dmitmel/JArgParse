@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9631d1e8-1adc-456b-9256-3477449a9880" name="Default" comment="Initial commit&#10;">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/util/Maps.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/jargparse/util/IterableUtils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/ArgumentParser.java" afterPath="$PROJECT_DIR$/src/main/java/org/jargparse/ArgumentParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/util/Lists.java" afterPath="$PROJECT_DIR$/src/main/java/org/jargparse/util/Lists.java" />
     </list>
     <ignored path="JArgParse.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,7 +25,7 @@
     <favorites_list name="JArgParse" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -50,10 +50,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="/usr/lib/jvm/java-8-oracle/src.zip!/java/lang/Character.java" />
-        <option value="$PROJECT_DIR$/src/main/java/jargparse/util/Strings.java" />
-        <option value="/usr/lib/jvm/java-8-oracle/jre/lib/deploy.jar!/com/oracle/deploy/update/Updater.class" />
-        <option value="/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar!/sun/awt/HKSCS.class" />
         <option value="/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar!/sun/awt/motif/X11GB2312.class" />
         <option value="/usr/lib/jvm/java-8-oracle/src.zip!/java/net/CookieHandler.java" />
         <option value="/usr/lib/jvm/java-8-oracle/src.zip!/java/net/CookieManager.java" />
@@ -101,14 +97,18 @@
         <option value="$PROJECT_DIR$/src/main/java/org/jargparse/util/Lists.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jargparse/util/Maps.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jargparse/ArgumentParser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jargparse/util/Iterables.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jargparse/util/Iterabls.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jargparse/util/Iterable.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jargparse/util/IterableUtils.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
-    <option name="y" value="-4" />
+    <option name="y" value="24" />
     <option name="width" value="1855" />
-    <option name="height" value="1084" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -347,8 +347,8 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -363,14 +363,15 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="org.jargparse.util.Iterables" />
       <recent name="jargparse.argtypes.Argument" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/JUnit" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.jargparse" />
       <recent name="jargparse" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/JUnit" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.Run tests">
@@ -849,9 +850,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MainTests_testParsingUnexpectedPositionals - 2016.05.25 at 08h 12m 06s.xml">
-      <configuration name="MainTests.testParsingUnexpectedPositionals" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MainTests_testParsingUnexpectedPositionals - 2016.05.25 at 08h 12m 37s.xml">
       <configuration name="MainTests.testParsingUnexpectedPositionals" configurationId="JUnit" />
     </history-entry>
@@ -879,9 +877,12 @@
     <history-entry file="Run_tests - 2016.05.25 at 20h 29m 24s.xml">
       <configuration name="Run tests" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="Run_tests - 2016.05.25 at 20h 38m 17s.xml">
+      <configuration name="Run tests" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -895,7 +896,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3090105" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31288004" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2498618" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2498618" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -975,7 +976,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.ideaLibSources/hamcrest-core-1.3-sources.jar!/org/hamcrest/BaseDescription.java" />
     <entry file="jar://$PROJECT_DIR$/JUnit/hamcrest-core-1.3.jar!/org/hamcrest/BaseMatcher.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1312,14 +1312,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jargparse/util/Lists.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="25" column="57" selection-start-line="25" selection-start-column="57" selection-end-line="25" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jargparse/ArgumentParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
@@ -1330,10 +1322,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jargparse/util/Maps.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jargparse/util/Maps.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jargparse/util/IterableUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+        <state relative-caret-position="140">
+          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jargparse/util/Lists.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>

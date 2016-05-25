@@ -6,6 +6,7 @@ import org.jargparse.argtypes.Option;
 import org.jargparse.argtypes.Positional;
 import org.jargparse.util.*;
 import org.jargparse.util.Arrays;
+import org.jargparse.util.IterableUtils;
 
 import java.util.*;
 
@@ -196,10 +197,10 @@ public class ArgumentParser {
             builder.append(" \"").append(((UnexpectedArgumentException) e).getArgument()).append('\"');
         } else if (e instanceof UnexpectedPositionalsException) {
             builder.append("unexpected positionals: ");
-            builder.append(Lists.join(((UnexpectedPositionalsException) e).getPositionals(), ", "));
+            builder.append(IterableUtils.join(((UnexpectedPositionalsException) e).getPositionals(), ", "));
         } else if (e instanceof MissingPositionalsException) {
             builder.append("missing positionals: ");
-            builder.append(Lists.join(((MissingPositionalsException) e).getPositionals(), ", "));
+            builder.append(IterableUtils.join(((MissingPositionalsException) e).getPositionals(), ", "));
         }
 
         return builder.toString();
