@@ -20,7 +20,7 @@ public class Strings {
             char c = s.charAt(i);
             currentLine.append(c);
 
-            // Testing Windows' CRLF newline separators
+            // Checking Windows' CRLF newline separators
             if ((c == '\n' && getNextChar(s, i) == '\r') || (c == '\r' && getNextChar(s, i) == '\n')) {
                 i++;
                 lines.add(currentLine.toString() + s.charAt(i));
@@ -41,7 +41,7 @@ public class Strings {
     }
 
     public static String duplicateChar(char c, int times) {
-        StringBuilder out = new StringBuilder("");
+        StringBuilder out = new StringBuilder(times);
         for (int i = 0; i < times; i++)
             out.append(c);
         return out.toString();

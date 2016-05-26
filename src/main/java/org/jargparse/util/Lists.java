@@ -5,6 +5,7 @@ import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class Lists {
+    // See {@link java.util.stream.Stream#filter(java.util.function.Predicate)}
     public static <T> List<T> filter(List<T> list, org.jargparse.util.Predicate<T> predicate) {
         List<T> filtered = new ArrayList<>(list.size());
         for (T item : list)

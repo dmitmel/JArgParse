@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * Class for styled string tokens. They can contain this features:
  * <ol>
- *     <li>new line spacing, that can be injected if there was newline before token</li>
+ *     <li>New line spacing, that can be injected if there was newline before token</li>
  * </ol>
  */
 class StyledStringToken implements StringToken {

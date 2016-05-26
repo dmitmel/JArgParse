@@ -14,16 +14,11 @@ public class ArgumentList implements List<Argument> {
     public static final int RIGHT_MARGIN_FOR_TRANSLATING_TO_STRING = 80;
     public static final String INDENT_BEFORE_ARGUMENT_HELP_LINE = "  ";
 
-    private final String appDescription;
-    private final String appName;
+    final String appDescription;
+    final String appName;
 
     private List<Argument> underlying;
     private Argument lastAddedArgument;
-
-    // Variables for generating help and usage info
-    private StringTokenBuilder helpMessageBuilder;
-    private StringTokenBuilder usageMessageBuilder;
-    private String newlineSpacingForUsageArgs;
 
     public ArgumentList(String appName, String appDescription, Argument... arguments) {
         this(appName, appDescription, new ArrayList<>(Arrays.asList(arguments)));
@@ -146,171 +141,21 @@ public class ArgumentList implements List<Argument> {
         return null;
     }
 
+
     public String constructHelpMessage() {
-        helpMessageBuilder = new StringTokenBuilder();
-        helpMessageBuilder.append(usageAsTokenBuilder()).append("\n\n");
-        helpMessageBuilder.appendWordsString(appDescription).append("\n\n");
-
-        addPositionalsHelpSection();
-        helpMessageBuilder.append('\n');
-        addNonPositionalsHelpSection();
-
-        return helpMessageBuilder.joinWithRightMargin(RIGHT_MARGIN_FOR_TRANSLATING_TO_STRING);
-    }
-
-    private void addPositionalsHelpSection() {
-        List<Argument> onlyPositionals = Lists.filter(this,
-                Argument.Type.makePredicate(Argument.Type.POSITIONAL));
-        if (onlyPositionals.size() > 0) {
-            helpMessageBuilder.append("positional arguments:\n");
-            for (Argument positional : onlyPositionals)
-                addHelpAboutPositional(positional);
-        }
-    }
-
-    private void addHelpAboutPositional(Argument positional) {
-        StringBuilder currentLineBuilder = new StringBuilder(INDENT_BEFORE_ARGUMENT_HELP_LINE);
-        currentLineBuilder.append(positional.metaVar);
-        makeIndentBetweenArgNameAndInfoInto(currentLineBuilder);
-        currentLineBuilder.append(positional.helpInfo).append('\n');
-        helpMessageBuilder.append(currentLineBuilder);
-    }
-
-    private void addNonPositionalsHelpSection() {
-        List<Argument> nonPositionals = Lists.filter(this,
-                Argument.Type.makePredicate(Argument.Type.FLAG, Argument.Type.OPTION));
-        if (nonPositionals.size() > 0) {
-            helpMessageBuilder.append("optional arguments:\n");
-            for (Argument nonPositional : nonPositionals) {
-                if (nonPositional.getType() == Argument.Type.OPTION)
-                    addHelpAboutOption((Option) nonPositional);
-                else if (nonPositional.getType() == Argument.Type.FLAG)
-                    addHelpAboutFlag((Flag) nonPositional);
-            }
-        }
-    }
-
-    private void addHelpAboutFlag(Flag flag) {
-        StringBuilder currentLineBuilder = new StringBuilder("  ");
-
-        if (flag.isNameValid()) {
-            currentLineBuilder.append(flag.name);
-
-            if (flag.isLongNameValid()) {
-                currentLineBuilder.append(", ").append(flag.longName);
-            }
-
-        } else if (flag.isLongNameValid()) {
-            currentLineBuilder.append(flag.longName);
-
-        } else
-            throw new IllegalStateException("argument " + flag + " doesn\'t contain any names");
-
-        makeIndentBetweenArgNameAndInfoInto(currentLineBuilder);
-
-        currentLineBuilder.append(flag.helpInfo).append('\n');
-        helpMessageBuilder.append(currentLineBuilder.toString());
-    }
-
-    private void addHelpAboutOption(Option option) {
-        StringBuilder currentLineBuilder = new StringBuilder("  ");
-
-        if (option.isNameValid()) {
-            currentLineBuilder.append(option.name);
-            if (option.isMetaVarDefined())
-                currentLineBuilder.append(' ').append(option.metaVar);
-
-            if (option.isLongNameValid()) {
-                currentLineBuilder.append(", ").append(option.longName);
-                if (option.isMetaVarDefined())
-                    currentLineBuilder.append(' ').append(option.metaVar);
-            }
-
-        } else if (option.isLongNameValid()) {
-            currentLineBuilder.append(option.longName);
-            if (option.isMetaVarDefined())
-                currentLineBuilder.append(' ').append(option.metaVar);
-
-        } else
-            throw new IllegalStateException("argument " + option + " doesn\'t contain any names");
-
-        makeIndentBetweenArgNameAndInfoInto(currentLineBuilder);
-
-        currentLineBuilder.append(option.helpInfo).append('\n');
-        helpMessageBuilder.append(currentLineBuilder.toString());
-    }
-
-    private void makeIndentBetweenArgNameAndInfoInto(StringBuilder currentLineBuilder) {
-        if (currentLineBuilder.length() > 23)
-            currentLineBuilder.append('\n').append(newlineSpacingForUsageArgs).append("     ");
-        else
-            currentLineBuilder.append(Strings.duplicateChar(' ', 23 + 1 - currentLineBuilder.length()));
+        return new HelpInfoGenerator(this).constructHelpMessage();
     }
 
     public String constructUsageMessage() {
-        return usageAsTokenBuilder().joinWithRightMargin(RIGHT_MARGIN_FOR_TRANSLATING_TO_STRING);
+        return new UsageInfoGenerator(this).constructUsageMessage();
     }
 
-    private StringTokenBuilder usageAsTokenBuilder() {
-        usageMessageBuilder = new StringTokenBuilder();
 
-        usageMessageBuilder.append("usage:");
-        usageMessageBuilder.append(appName);
-
-        newlineSpacingForUsageArgs = countNewLineSpacingForUsageArgs();
-        usageMessageForAllArguments();
-
-        return usageMessageBuilder;
+    StringTokenBuilder usageAsTokenBuilder() {
+        return new UsageInfoGenerator(this).usageAsTokenBuilder();
     }
 
-    private String countNewLineSpacingForUsageArgs() {
+    String countNewLineSpacingForUsageArgs() {
         return Strings.duplicateChar(' ', 6 + 1 + appName.length() + 1);
-    }
-
-    private void usageMessageForAllArguments() {
-        List<Argument> nonPositionals = Lists.filter(this,
-                Argument.Type.makePredicate(Argument.Type.FLAG, Argument.Type.OPTION));
-        for (Argument nonPositional : nonPositionals)
-            usageMessageForAnyArgument(nonPositional);
-
-        usageMessageBuilder.append("\n".concat(newlineSpacingForUsageArgs));
-        // Positionals must be last in this list
-        List<Argument> onlyPositionals = Lists.filter(this,
-                Argument.Type.makePredicate(Argument.Type.POSITIONAL));
-        for (Argument positional : onlyPositionals)
-            usageMessageForAnyArgument(positional);
-    }
-
-    private void usageMessageForAnyArgument(Argument argument) {
-        String usagePart = "";
-
-        switch (argument.getType()) {
-            case POSITIONAL:
-                StringBuilder builder = new StringBuilder(String.format("[%s", argument.metaVar));
-                if (((Positional) argument).usage == Positional.Usage.ZERO_OR_MORE)
-                    builder.append("...");
-                builder.append(']');
-                usagePart = builder.toString();
-                break;
-
-            case FLAG:
-                if (argument.isNameValid())
-                    usagePart = String.format("[%s]", argument.name);
-                else if (argument.isLongNameValid())
-                    usagePart = String.format("[%s]", argument.longName);
-                // #addArgument(Argument) method checks if name is present, so here won't be "else" condition
-                break;
-
-            case OPTION:
-                if (argument.isNameValid())
-                    usagePart = String.format("[%s %s]", argument.name, argument.metaVar);
-                else if (argument.isLongNameValid())
-                    usagePart = String.format("[%s %s]", argument.longName, argument.metaVar);
-                usageMessageBuilder.appendWithNewlineSpacing(
-                        String.format("[%s %s]", argument.name, argument.metaVar), newlineSpacingForUsageArgs);
-                break;
-        }
-
-        usageMessageBuilder.appendWithNewlineSpacing(usagePart, newlineSpacingForUsageArgs);
     }
 }

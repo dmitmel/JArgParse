@@ -7,11 +7,21 @@ public abstract class Argument {
     public String name;             // Field is ignored in positional args
     public String helpInfo;
     public String longName;         // Field is ignored in positional args
+    /**
+     * Stores data about meta var of this argument. Meta vars can do two things:
+     *
+     * <ol>
+     *     <li>They can be used in generating usage and help info (meta vars are in upper case):
+     *         <pre><code>
+     * my_app [--option SOME_OPTION] [--flag]
+     *        [SOME_POSITIONAL]
+     *         </code></pre>
+     *     </li>
+     *
+     *     <li>They can be used as keys for values in result map.</li>
+     * </ol>
+     */
     public String metaVar;
-
-    public static String metaVarFromName(String name) {
-        return name.toUpperCase().replace('-', '_');
-    }
 
     // You can see shortenings of this method (you don't need to specify type)
     public static Argument findFromArgumentListByName(ArgumentList argumentList, Type type,
