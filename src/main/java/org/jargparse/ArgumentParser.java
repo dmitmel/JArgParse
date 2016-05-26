@@ -121,7 +121,8 @@ public class ArgumentParser {
                             i++;
                         }
                         output.put(next.metaVar, values);
-                    }
+                    } else
+                        output.put(next.metaVar, Collections.emptyList());
                     break;
             }
 
