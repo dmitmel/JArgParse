@@ -36,8 +36,8 @@ public class ArgumentParser {
     }
 
     private void addInitialArguments() {
-        addArgument(new Flag("-h", "--help", "show this message and exit", "show help"));
-        addArgument(new Flag("-v", "--version", "show program's version number and exit", "show version"));
+        addArgument(new Flag("-h", "--help", "show this message and exit", "SHOW_HELP"));
+        addArgument(new Flag("-v", "--version", "show program's version number and exit", "SHOW_VERSION"));
     }
 
     public void addArgument(Argument newArgument) {
@@ -58,10 +58,10 @@ public class ArgumentParser {
         registerNotReceivedNonPositionals();
         putNonPositionalsToOutputData();
 
-        if ((boolean) output.get("show version")) {
+        if ((boolean) output.get("SHOW_VERSION")) {
             System.out.println(appVersion);
             return Collections.emptyMap();
-        } else if ((boolean) output.get("show help")) {
+        } else if ((boolean) output.get("SHOW_HELP")) {
             System.out.println(constructHelpMessage());
             return Collections.emptyMap();
         }
@@ -76,13 +76,13 @@ public class ArgumentParser {
             Option realOption = Option.findFromArgumentListByName(argumentList, option);
             if (realOption == null)
                 throw new UnexpectedArgumentException(option, Argument.Type.OPTION);
-            output.put(realOption.parseResultKey, optionValues.get(option));
+            output.put(realOption.metaVar, optionValues.get(option));
         }
         for (String flag : flagValues.keySet()) {
             Flag realFlag = Flag.findFromArgumentListByName(argumentList, flag);
             if (realFlag == null)
                 throw new UnexpectedArgumentException(flag, Argument.Type.FLAG);
-            output.put(realFlag.parseResultKey, flagValues.get(flag));
+            output.put(realFlag.metaVar, flagValues.get(flag));
         }
     }
 
@@ -104,13 +104,13 @@ public class ArgumentParser {
             switch (next.usage) {
                 case OPTIONAL:
                     if (i >= positionalValues.size())
-                        output.put(next.parseResultKey, next.defaultValue);
+                        output.put(next.metaVar, next.defaultValue);
                     else
-                        output.put(next.parseResultKey, positionalValues.get(i));
+                        output.put(next.metaVar, positionalValues.get(i));
                     break;
 
                 case REQUIRED:
-                    output.put(next.parseResultKey, positionalValues.get(i));
+                    output.put(next.metaVar, positionalValues.get(i));
                     break;
 
                 case ZERO_OR_MORE:
@@ -120,7 +120,7 @@ public class ArgumentParser {
                             values.add(item);
                             i++;
                         }
-                        output.put(next.parseResultKey, values);
+                        output.put(next.metaVar, values);
                     }
                     break;
             }

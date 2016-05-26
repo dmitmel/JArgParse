@@ -4,9 +4,7 @@ import org.jargparse.*;
 import org.jargparse.argtypes.Flag;
 import org.jargparse.argtypes.Option;
 import org.jargparse.argtypes.Positional;
-import org.jargparse.util.formatting.StringTokenBuilder;
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.List;
@@ -16,7 +14,7 @@ public class MainTests extends Assert {
     @Test(expected = ArgumentExistsException.class)
     public void testAdding2IdenticalArgs() {
         ArgumentParser parser = new ArgumentParser("my_cool_app", "some app description", "some app version");
-        parser.addArgument(new Flag("-v", "some help", "verbose"));
+        parser.addArgument(new Flag("-v", "some help", "VERBOSE"));
     }
 
     @Test(expected = UnexpectedArgumentException.class)
@@ -32,8 +30,8 @@ public class MainTests extends Assert {
     @Test
     public void testParsingRequiredPositionals() {
         Map<String, Object> result = makeTestParser().run("a");
-        assertEquals("a", result.get("positionalValue"));
-        assertEquals("some value", result.get("optionalValue"));
+        assertEquals("a", result.get("REQUIRED_VALUE"));
+        assertEquals("some value", result.get("OPTIONAL_VALUE"));
     }
 
     @Test(expected = MissingPositionalsException.class)
@@ -44,8 +42,8 @@ public class MainTests extends Assert {
     @Test
     public void testParsingOptionalPositionals() {
         Map<String, Object> result = makeTestParser().run("a", "b");
-        assertEquals("a", result.get("positionalValue"));
-        assertEquals("b", result.get("optionalValue"));
+        assertEquals("a", result.get("REQUIRED_VALUE"));
+        assertEquals("b", result.get("OPTIONAL_VALUE"));
     }
 
     @SuppressWarnings("unchecked")
@@ -54,15 +52,15 @@ public class MainTests extends Assert {
         Map<String, Object> result = makeTestParser()
                 .run("--some-long-flag", "required", "-V", "optional", "--number", "123", "listItem1", "listItem2",
                         "listItem3");
-        assertEquals("123", result.get("number"));
-        assertEquals(false, result.get("show help"));
-        assertEquals(true, result.get("some long flag"));
-        assertEquals("optional", result.get("optionalValue"));
-        assertEquals(false, result.get("show version"));
-        assertEquals("required", result.get("positionalValue"));
-        assertEquals(true, result.get("verbose"));
+        assertEquals("123", result.get("SOME_NUMBER"));
+        assertEquals(false, result.get("SHOW_HELP"));
+        assertEquals(true, result.get("SOME_LONG_FLAG"));
+        assertEquals("optional", result.get("OPTIONAL_VALUE"));
+        assertEquals(false, result.get("SHOW_VERSION"));
+        assertEquals("required", result.get("REQUIRED_VALUE"));
+        assertEquals(true, result.get("VERBOSE"));
 
-        List<String> values = (List<String>) result.get("valuesList");
+        List<String> values = (List<String>) result.get("SOME_VALUES");
         assertEquals(3, values.size());
         for (int i = 0; i < 3; i++)
             assertEquals("listItem" + (i + 1), values.get(i));
@@ -71,22 +69,22 @@ public class MainTests extends Assert {
     @Test
     public void testParserWithOnlyOptionalPositionals() {
         ArgumentParser parser = new ArgumentParser("my_cool_app", "some app description", "some app version");
-        parser.addArgument(new Positional("help1", "metavar1", "parseResultKey1", Positional.Usage.OPTIONAL,
+        parser.addArgument(new Positional("help1", "a", Positional.Usage.OPTIONAL,
                 "defaultValue1"));
-        parser.addArgument(new Positional("help2", "metavar2", "parseResultKey2", Positional.Usage.OPTIONAL,
+        parser.addArgument(new Positional("help2", "b", Positional.Usage.OPTIONAL,
                 "defaultValue2"));
 
         Map<String, Object> result1 = parser.run();
-        assertEquals("defaultValue1", result1.get("parseResultKey1"));
-        assertEquals("defaultValue2", result1.get("parseResultKey2"));
+        assertEquals("defaultValue1", result1.get("a"));
+        assertEquals("defaultValue2", result1.get("b"));
 
         Map<String, Object> result2 = parser.run("a");
-        assertEquals("a", result2.get("parseResultKey1"));
-        assertEquals("defaultValue2", result2.get("parseResultKey2"));
+        assertEquals("a", result2.get("a"));
+        assertEquals("defaultValue2", result2.get("b"));
 
         Map<String, Object> result3 = parser.run("a", "b");
-        assertEquals("a", result3.get("parseResultKey1"));
-        assertEquals("b", result3.get("parseResultKey2"));
+        assertEquals("a", result3.get("a"));
+        assertEquals("b", result3.get("b"));
     }
 
     @Test(expected = UnexpectedPositionalsException.class)
@@ -98,19 +96,19 @@ public class MainTests extends Assert {
         ArgumentParser parser = new ArgumentParser("my_cool_app", "Test application using JArgParse argument parser.",
                 "1.0");
 
-        parser.addArgument(new Positional("This is required positional argument", "REQUIRED_VALUE", "positionalValue"));
+        parser.addArgument(new Positional("This is required positional argument", "REQUIRED_VALUE"));
 
         parser.addArgument(new Positional("This is optional positional argument with default value", "OPTIONAL_VALUE",
-                "optionalValue", Positional.Usage.OPTIONAL, "some value"));
+                Positional.Usage.OPTIONAL, "some value"));
 
-        parser.addArgument(new Positional("This is values list args", "SOME_VALUES", "valuesList",
+        parser.addArgument(new Positional("This is values list args", "SOME_VALUES",
                 Positional.Usage.ZERO_OR_MORE));
 
-        parser.addArgument(new Option("-n", "--number", "Input number", "SOME_NUMBER", "number", "1"));
+        parser.addArgument(new Option("-n", "--number", "Input number", "SOME_NUMBER", "1"));
 
-        parser.addArgument(new Flag("-V", "--verbose", "Print what code does", "verbose"));
+        parser.addArgument(new Flag("-V", "--verbose", "Print what code does", "VERBOSE"));
 
-        parser.addArgument(new Flag(null, "--some-long-flag", "Some long flag", "some long flag"));
+        parser.addArgument(new Flag(null, "--some-long-flag", "Some long flag", "SOME_LONG_FLAG"));
 
         return parser;
     }

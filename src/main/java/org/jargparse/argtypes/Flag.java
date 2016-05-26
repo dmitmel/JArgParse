@@ -8,17 +8,15 @@ public class Flag extends Argument {
         return Type.FLAG;
     }
 
-    public Flag(String name, String helpInfo, String parseResultKey) {
-        super.name = name;
-        super.helpInfo = helpInfo;
-        super.parseResultKey = parseResultKey;
+    public Flag(String name, String helpInfo, String metaVar) {
+        this(name, null, helpInfo, metaVar);
     }
 
-    public Flag(String name, String longName, String helpInfo, String parseResultKey) {
+    public Flag(String name, String longName, String helpInfo, String metaVar) {
         super.name = name;
         super.longName = longName;
         super.helpInfo = helpInfo;
-        super.parseResultKey = parseResultKey;
+        super.metaVar = metaVar;
     }
 
     public static boolean isStringArgumentFlag(String stringArg) {

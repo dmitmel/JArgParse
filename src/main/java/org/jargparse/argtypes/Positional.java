@@ -11,18 +11,17 @@ public class Positional extends Argument {
         return Type.POSITIONAL;
     }
 
-    public Positional(String helpInfo, String metaVar, String parseResultKey) {
-        this(helpInfo, metaVar, parseResultKey, Usage.REQUIRED);
+    public Positional(String helpInfo, String metaVar) {
+        this(helpInfo, metaVar, Usage.REQUIRED);
     }
 
-    public Positional(String helpInfo, String metaVar, String parseResultKey, Usage usage) {
-        this(helpInfo, metaVar, parseResultKey, usage, null);
+    public Positional(String helpInfo, String metaVar, Usage usage) {
+        this(helpInfo, metaVar, usage, null);
     }
 
-    public Positional(String helpInfo, String metaVar, String parseResultKey, Usage usage, String defaultValue) {
+    public Positional(String helpInfo, String metaVar, Usage usage, String defaultValue) {
         super.helpInfo = helpInfo;
         super.metaVar = metaVar;
-        super.parseResultKey = parseResultKey;
         this.usage = usage;
         this.defaultValue = defaultValue;
     }

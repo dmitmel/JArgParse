@@ -10,24 +10,15 @@ public class Option extends Argument {
         return Type.OPTION;
     }
 
-    public Option(String name, String helpInfo, String parseResultKey, String defaultValue) {
-        this.name = name;
-        this.helpInfo = helpInfo;
-        super.parseResultKey = parseResultKey;
-        this.defaultValue = defaultValue;
+    public Option(String name, String helpInfo, String metaVar, String defaultValue) {
+        this(name, null, helpInfo, metaVar, defaultValue);
     }
 
-    public Option(String name, String longName, String helpInfo, String parseResultKey, String defaultValue) {
-        this(name, longName, helpInfo, metaVarFromName(name), parseResultKey, defaultValue);
-    }
-
-    public Option(String name, String longName, String helpInfo, String metaVar, String parseResultKey,
-                  String defaultValue) {
+    public Option(String name, String longName, String helpInfo, String metaVar, String defaultValue) {
         super.name = name;
         super.longName = longName;
         super.helpInfo = helpInfo;
         super.metaVar = metaVar;
-        super.parseResultKey = parseResultKey;
         this.defaultValue = defaultValue;
     }
 

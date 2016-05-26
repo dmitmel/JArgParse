@@ -7,7 +7,6 @@ public abstract class Argument {
     public String name;             // Field is ignored in positional args
     public String helpInfo;
     public String longName;         // Field is ignored in positional args
-    public String parseResultKey;
     public String metaVar;
 
     public static String metaVarFromName(String name) {
