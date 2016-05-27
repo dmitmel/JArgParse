@@ -1,9 +1,9 @@
 package tests;
 
-import com.github.dmitmel.*;
-import com.github.dmitmel.argtypes.Flag;
-import com.github.dmitmel.argtypes.Option;
-import com.github.dmitmel.argtypes.Positional;
+import com.github.dmitmel.jargparse.*;
+import com.github.dmitmel.jargparse.argtypes.Flag;
+import com.github.dmitmel.jargparse.argtypes.Option;
+import com.github.dmitmel.jargparse.argtypes.Positional;
 import org.junit.Assert;
 import org.junit.Test;
 
