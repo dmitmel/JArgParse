@@ -2,32 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9631d1e8-1adc-456b-9256-3477449a9880" name="Default" comment="Initial commit&#10;">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/ArgumentExistsException.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/ArgumentExistsException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/ArgumentList.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/ArgumentList.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/ArgumentParseException.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/ArgumentParseException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/ArgumentParser.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/ArgumentParser.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/HelpInfoGenerator.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/HelpInfoGenerator.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/MissingPositionalsException.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/MissingPositionalsException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/UnexpectedArgumentException.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/UnexpectedArgumentException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/UnexpectedPositionalsException.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/UnexpectedPositionalsException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/UsageInfoGenerator.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/UsageInfoGenerator.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/argtypes/Argument.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/argtypes/Argument.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/argtypes/Flag.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/argtypes/Flag.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/argtypes/Option.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/argtypes/Option.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/argtypes/Positional.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/argtypes/Positional.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/util/Arrays.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/util/Arrays.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/util/IterableUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/util/IterableUtils.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/util/Lists.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/util/Lists.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/util/Pair.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/util/Pair.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/util/Predicate.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/util/Predicate.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/util/Strings.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/util/Strings.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/util/formatting/SimpleStringToken.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/util/formatting/SimpleStringToken.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/util/formatting/StringToken.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/util/formatting/StringToken.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/util/formatting/StringTokenBuilder.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/util/formatting/StringTokenBuilder.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/util/formatting/StyledStringToken.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/util/formatting/StyledStringToken.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/tests/FormattingTests.java" afterPath="$PROJECT_DIR$/src/test/java/tests/FormattingTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/tests/MainTests.java" afterPath="$PROJECT_DIR$/src/test/java/tests/MainTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
     </list>
     <ignored path="JArgParse.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,7 +23,18 @@
     <favorites_list name="JArgParse" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="build.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/build.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="539">
+              <caret line="53" column="85" selection-start-line="53" selection-start-column="85" selection-end-line="53" selection-end-column="85" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -95,7 +81,6 @@
         <option value="$PROJECT_DIR$/src/main/java/org/jargparse/util/formatting/StringTokenBuilder.java" />
         <option value="$PROJECT_DIR$/src/test/java/tests/FormattingTests.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/build.xml" />
         <option value="/usr/lib/jvm/java-8-oracle/src.zip!/java/util/OptionalDouble.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jargparse/util/ExtendedIterator.java" />
         <option value="/usr/lib/jvm/java-8-oracle/jre/lib/deploy.jar!/com/sun/deploy/util/ArgumentParsingUtil.class" />
@@ -124,6 +109,7 @@
         <option value="$PROJECT_DIR$/src/main/java/org/jargparse/HelpInfoGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jargparse/UsageInfoGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jargparse/ArgumentList.java" />
+        <option value="$PROJECT_DIR$/build.xml" />
       </list>
     </option>
   </component>
@@ -189,6 +175,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -273,45 +261,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JArgParse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JArgParse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="classes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="github" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dmitmel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -813,9 +765,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Run_tests - 2016.05.26 at 20h 09m 28s.xml">
-      <configuration name="Run tests" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="Run_tests - 2016.05.26 at 20h 09m 59s.xml">
       <configuration name="Run tests" configurationId="JUnit" />
     </history-entry>
@@ -843,6 +792,9 @@
     <history-entry file="Run_tests - 2016.05.27 at 18h 11m 23s.xml">
       <configuration name="Run tests" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="Run_tests - 2016.05.27 at 18h 25m 10s.xml">
+      <configuration name="Run tests" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
@@ -860,8 +812,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25538972" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25815368" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2498618" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2498618" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -875,6 +826,7 @@
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="165" y="208" width="1655" height="856" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="GhcMod" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1013,13 +965,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-300">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -1314,6 +1259,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
           <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="53" column="85" selection-start-line="53" selection-start-column="85" selection-end-line="53" selection-end-column="85" />
           <folding />
         </state>
       </provider>
