@@ -1,4 +1,4 @@
-package org.jargparse.util;
+package com.github.dmitmel.util;
 
 import java.util.HashMap;
 import java.util.Map;

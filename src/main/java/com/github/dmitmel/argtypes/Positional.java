@@ -1,6 +1,6 @@
-package org.jargparse.argtypes;
+package com.github.dmitmel.argtypes;
 
-import org.jargparse.util.Predicate;
+import com.github.dmitmel.util.Predicate;
 
 public class Positional extends Argument {
     public Usage usage;

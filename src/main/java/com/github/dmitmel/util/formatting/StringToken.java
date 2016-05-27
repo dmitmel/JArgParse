@@ -1,4 +1,4 @@
-package org.jargparse.util.formatting;
+package com.github.dmitmel.util.formatting;
 
 interface StringToken {
     String getValue();

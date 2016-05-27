@@ -1,6 +1,6 @@
-package org.jargparse.argtypes;
+package com.github.dmitmel.argtypes;
 
-import org.jargparse.ArgumentList;
+import com.github.dmitmel.ArgumentList;
 
 public class Flag extends Argument {
     @Override

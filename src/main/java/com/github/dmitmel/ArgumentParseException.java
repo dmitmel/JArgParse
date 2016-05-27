@@ -1,4 +1,4 @@
-package org.jargparse;
+package com.github.dmitmel;
 
 public class ArgumentParseException extends RuntimeException {
     public ArgumentParseException() {

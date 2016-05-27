@@ -1,7 +1,7 @@
-package org.jargparse.argtypes;
+package com.github.dmitmel.argtypes;
 
-import org.jargparse.ArgumentList;
-import org.jargparse.util.Predicate;
+import com.github.dmitmel.ArgumentList;
+import com.github.dmitmel.util.Predicate;
 
 public abstract class Argument {
     public String name;             // Field is ignored in positional args

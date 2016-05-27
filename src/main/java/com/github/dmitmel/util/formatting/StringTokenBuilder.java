@@ -1,6 +1,6 @@
-package org.jargparse.util.formatting;
+package com.github.dmitmel.util.formatting;
 
-import org.jargparse.util.Strings;
+import com.github.dmitmel.util.Strings;
 
 import java.util.*;
 

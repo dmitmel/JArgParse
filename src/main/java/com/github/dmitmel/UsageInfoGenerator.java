@@ -1,9 +1,9 @@
-package org.jargparse;
+package com.github.dmitmel;
 
-import org.jargparse.argtypes.Argument;
-import org.jargparse.argtypes.Positional;
-import org.jargparse.util.Lists;
-import org.jargparse.util.formatting.StringTokenBuilder;
+import com.github.dmitmel.argtypes.Argument;
+import com.github.dmitmel.argtypes.Positional;
+import com.github.dmitmel.util.Lists;
+import com.github.dmitmel.util.formatting.StringTokenBuilder;
 
 import java.util.List;
 

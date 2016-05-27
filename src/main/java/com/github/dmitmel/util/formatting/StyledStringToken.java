@@ -1,4 +1,4 @@
-package org.jargparse.util.formatting;
+package com.github.dmitmel.util.formatting;
 
 import java.util.Objects;
 

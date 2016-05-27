@@ -1,12 +1,12 @@
-package org.jargparse;
+package com.github.dmitmel;
 
-import org.jargparse.argtypes.Argument;
-import org.jargparse.argtypes.Flag;
-import org.jargparse.argtypes.Option;
-import org.jargparse.argtypes.Positional;
-import org.jargparse.util.*;
-import org.jargparse.util.Arrays;
-import org.jargparse.util.IterableUtils;
+import com.github.dmitmel.argtypes.Argument;
+import com.github.dmitmel.argtypes.Flag;
+import com.github.dmitmel.argtypes.Option;
+import com.github.dmitmel.argtypes.Positional;
+import com.github.dmitmel.util.*;
+import com.github.dmitmel.util.Arrays;
+import com.github.dmitmel.util.IterableUtils;
 
 import java.util.*;
 

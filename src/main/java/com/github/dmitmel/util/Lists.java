@@ -1,4 +1,4 @@
-package org.jargparse.util;
+package com.github.dmitmel.util;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 @SuppressWarnings("unchecked")
 public class Lists {
     // See {@link java.util.stream.Stream#filter(java.util.function.Predicate)}
-    public static <T> List<T> filter(List<T> list, org.jargparse.util.Predicate<T> predicate) {
+    public static <T> List<T> filter(List<T> list, com.github.dmitmel.util.Predicate<T> predicate) {
         List<T> filtered = new ArrayList<>(list.size());
         for (T item : list)
             if (predicate.test(item))

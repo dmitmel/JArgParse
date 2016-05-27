@@ -1,7 +1,7 @@
-package org.jargparse;
+package com.github.dmitmel;
 
 /**
- * Exception can be thrown if you try to add new {@link org.jargparse.argtypes.Argument} into {@link ArgumentList}.
+ * Exception can be thrown if you try to add new {@link com.github.dmitmel.argtypes.Argument} into {@link ArgumentList}.
  */
 public class ArgumentExistsException extends RuntimeException {
     public ArgumentExistsException(String message) {
