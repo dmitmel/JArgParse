@@ -48,7 +48,7 @@ public class ArgumentParser {
         return argumentList.constructHelpMessage();
     }
 
-    public Map<String, Object> run(String... args) {
+    public ParseResult run(String... args) {
         output = new HashMap<>(0);
         flagValues = new HashMap<>(0);
         optionValues = new HashMap<>(0);
@@ -60,15 +60,15 @@ public class ArgumentParser {
 
         if ((boolean) output.get("SHOW_VERSION")) {
             System.out.println(appVersion);
-            return Collections.emptyMap();
+            return ParseResult.emptyResult();
         } else if ((boolean) output.get("SHOW_HELP")) {
             System.out.println(constructHelpMessage());
-            return Collections.emptyMap();
+            return ParseResult.emptyResult();
         }
 
         putAllPositionalsToOutputData();
 
-        return output;
+        return ParseResult.realResult(output);
     }
 
     private void putNonPositionalsToOutputData() {

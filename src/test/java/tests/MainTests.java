@@ -29,9 +29,9 @@ public class MainTests extends Assert {
 
     @Test
     public void testParsingRequiredPositionals() {
-        Map<String, Object> result = makeTestParser().run("a");
-        assertEquals("a", result.get("REQUIRED_VALUE"));
-        assertEquals("some value", result.get("OPTIONAL_VALUE"));
+        ParseResult result = makeTestParser().run("a");
+        assertEquals("a", result.getString("REQUIRED_VALUE"));
+        assertEquals("some value", result.getString("OPTIONAL_VALUE"));
     }
 
     @Test(expected = MissingPositionalsException.class)
@@ -41,26 +41,25 @@ public class MainTests extends Assert {
 
     @Test
     public void testParsingOptionalPositionals() {
-        Map<String, Object> result = makeTestParser().run("a", "b");
-        assertEquals("a", result.get("REQUIRED_VALUE"));
-        assertEquals("b", result.get("OPTIONAL_VALUE"));
+        ParseResult result = makeTestParser().run("a", "b");
+        assertEquals("a", result.getString("REQUIRED_VALUE"));
+        assertEquals("b", result.getString("OPTIONAL_VALUE"));
     }
 
-    @SuppressWarnings("unchecked")
     @Test
     public void testParsingMixedArguments() {
-        Map<String, Object> result = makeTestParser()
+        ParseResult result = makeTestParser()
                 .run("--some-long-flag", "required", "-V", "optional", "--number", "123", "listItem1", "listItem2",
                         "listItem3");
-        assertEquals("123", result.get("SOME_NUMBER"));
-        assertEquals(false, result.get("SHOW_HELP"));
-        assertEquals(true, result.get("SOME_LONG_FLAG"));
-        assertEquals("optional", result.get("OPTIONAL_VALUE"));
-        assertEquals(false, result.get("SHOW_VERSION"));
-        assertEquals("required", result.get("REQUIRED_VALUE"));
-        assertEquals(true, result.get("VERBOSE"));
+        assertEquals("123", result.getString("SOME_NUMBER"));
+        assertEquals(false, result.getBoolean("SHOW_HELP"));
+        assertEquals(true, result.getBoolean("SOME_LONG_FLAG"));
+        assertEquals("optional", result.getString("OPTIONAL_VALUE"));
+        assertEquals(false, result.getBoolean("SHOW_VERSION"));
+        assertEquals("required", result.getString("REQUIRED_VALUE"));
+        assertEquals(true, result.getBoolean("VERBOSE"));
 
-        List<String> values = (List<String>) result.get("SOME_VALUES");
+        List<String> values = result.getList("SOME_VALUES");
         assertEquals(3, values.size());
         for (int i = 0; i < 3; i++)
             assertEquals("listItem" + (i + 1), values.get(i));
@@ -74,17 +73,17 @@ public class MainTests extends Assert {
         parser.addArgument(new Positional("help2", "b", Positional.Usage.OPTIONAL,
                 "defaultValue2"));
 
-        Map<String, Object> result1 = parser.run();
-        assertEquals("defaultValue1", result1.get("a"));
-        assertEquals("defaultValue2", result1.get("b"));
+        ParseResult result1 = parser.run();
+        assertEquals("defaultValue1", result1.getString("a"));
+        assertEquals("defaultValue2", result1.getString("b"));
 
-        Map<String, Object> result2 = parser.run("a");
-        assertEquals("a", result2.get("a"));
-        assertEquals("defaultValue2", result2.get("b"));
+        ParseResult result2 = parser.run("a");
+        assertEquals("a", result2.getString("a"));
+        assertEquals("defaultValue2", result2.getString("b"));
 
-        Map<String, Object> result3 = parser.run("a", "b");
-        assertEquals("a", result3.get("a"));
-        assertEquals("b", result3.get("b"));
+        ParseResult result3 = parser.run("a", "b");
+        assertEquals("a", result3.getString("a"));
+        assertEquals("b", result3.getString("b"));
     }
 
     @Test(expected = UnexpectedPositionalsException.class)
