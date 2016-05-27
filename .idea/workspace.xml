@@ -2,40 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9631d1e8-1adc-456b-9256-3477449a9880" name="Default" comment="Initial commit&#10;">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/ArgumentList$1.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/ArgumentExistsException.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/ArgumentExistsException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/ArgumentList.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/ArgumentList.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/ArgumentParseException.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/ArgumentParseException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/ArgumentParser.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/ArgumentParser.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/HelpInfoGenerator.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/HelpInfoGenerator.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/MissingPositionalsException.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/MissingPositionalsException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/UnexpectedArgumentException.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/UnexpectedArgumentException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/UnexpectedPositionalsException.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/UnexpectedPositionalsException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/UsageInfoGenerator.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/UsageInfoGenerator.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/argtypes/Argument.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/argtypes/Argument.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/argtypes/Flag.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/argtypes/Flag.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/argtypes/Option.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/argtypes/Option.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/argtypes/Positional.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/argtypes/Positional.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/util/Arrays.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/util/Arrays.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/util/IterableUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/util/IterableUtils.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/util/Lists.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/util/Lists.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/util/Pair.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/util/Pair.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/util/Predicate.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/util/Predicate.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/util/Strings.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/util/Strings.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/util/formatting/SimpleStringToken.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/util/formatting/SimpleStringToken.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/util/formatting/StringToken.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/util/formatting/StringToken.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/util/formatting/StringTokenBuilder.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/util/formatting/StringTokenBuilder.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/jargparse/util/formatting/StyledStringToken.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/util/formatting/StyledStringToken.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/ArgumentList.class" afterPath="$PROJECT_DIR$/build/main/classes/org/jargparse/ArgumentList.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/argtypes/Argument$Type$1.class" afterPath="$PROJECT_DIR$/build/main/classes/org/jargparse/argtypes/Argument$Type$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/argtypes/Argument$Type.class" afterPath="$PROJECT_DIR$/build/main/classes/org/jargparse/argtypes/Argument$Type.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/argtypes/Argument.class" afterPath="$PROJECT_DIR$/build/main/classes/org/jargparse/argtypes/Argument.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/util/Lists.class" afterPath="$PROJECT_DIR$/build/main/classes/org/jargparse/util/Lists.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/util/Strings.class" afterPath="$PROJECT_DIR$/build/main/classes/org/jargparse/util/Strings.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/ArgumentExistsException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/ArgumentList.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/ArgumentParseException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/ArgumentParser$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/ArgumentParser.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/HelpInfoGenerator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/MissingPositionalsException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/UnexpectedArgumentException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/UnexpectedPositionalsException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/UsageInfoGenerator$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/UsageInfoGenerator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/argtypes/Argument$Type$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/argtypes/Argument$Type.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/argtypes/Argument.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/argtypes/Flag.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/argtypes/Option.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/argtypes/Positional$Usage$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/argtypes/Positional$Usage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/argtypes/Positional.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/util/Arrays$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/util/Arrays.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/util/IterableUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/util/Lists.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/util/Pair.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/util/Predicate.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/util/Strings.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/util/formatting/SimpleStringToken.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/util/formatting/StringToken$Type.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/util/formatting/StringToken.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/util/formatting/StringTokenBuilder.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/org/jargparse/util/formatting/StyledStringToken.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/jar/JArgParse-1.0-sources.jar" afterPath="$PROJECT_DIR$/build/jar/JArgParse-1.0-sources.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/jar/JArgParse-1.0.jar" afterPath="$PROJECT_DIR$/build/jar/JArgParse-1.0.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/test/classes/tests/FormattingTests.class" afterPath="$PROJECT_DIR$/build/test/classes/tests/FormattingTests.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/test/classes/tests/MainTests.class" afterPath="$PROJECT_DIR$/build/test/classes/tests/MainTests.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LICENSE" afterPath="$PROJECT_DIR$/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/tests/FormattingTests.java" afterPath="$PROJECT_DIR$/src/test/java/tests/FormattingTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/tests/MainTests.java" afterPath="$PROJECT_DIR$/src/test/java/tests/MainTests.java" />
     </list>
     <ignored path="JArgParse.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -197,9 +199,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -364,8 +363,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JArgParse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JArgParse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -867,9 +883,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Run_tests - 2016.05.26 at 20h 08m 13s.xml">
-      <configuration name="Run tests" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="Run_tests - 2016.05.26 at 20h 08m 43s.xml">
       <configuration name="Run tests" configurationId="JUnit" />
     </history-entry>
@@ -897,6 +910,9 @@
     <history-entry file="Run_tests - 2016.05.26 at 22h 37m 19s.xml">
       <configuration name="Run tests" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="Run_tests - 2016.05.27 at 18h 02m 54s.xml">
+      <configuration name="Run tests" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
@@ -905,6 +921,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
@@ -912,8 +929,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2498618" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25262576" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2498618" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2498618" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -924,11 +940,11 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2498618" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cabal" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946378" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4337852" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="165" y="208" width="1655" height="856" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="GhcMod" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
