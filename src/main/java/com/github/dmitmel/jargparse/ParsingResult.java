@@ -5,10 +5,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public abstract class ParseResult implements Map<String, Object> {
+public abstract class ParsingResult implements Map<String, Object> {
     private Map<String, Object> underlying;
 
-    public ParseResult(Map<String, Object> underlying) {
+    public ParsingResult(Map<String, Object> underlying) {
         this.underlying = underlying;
     }
 
@@ -47,8 +47,8 @@ public abstract class ParseResult implements Map<String, Object> {
      */
     public abstract boolean isRealResult();
 
-    public static ParseResult realResult(Map<String, Object> map) {
-        return new ParseResult(map) {
+    public static ParsingResult realResult(Map<String, Object> map) {
+        return new ParsingResult(map) {
             @Override
             public boolean isRealResult() {
                 return true;
@@ -56,9 +56,9 @@ public abstract class ParseResult implements Map<String, Object> {
         };
     }
 
-    public static ParseResult emptyResult() {
+    public static ParsingResult emptyResult() {
         // I give null with purpose, so you can't manipulate with empty result
-        return new ParseResult(null) {
+        return new ParsingResult(null) {
             @Override
             public boolean isRealResult() {
                 return false;

@@ -8,7 +8,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.List;
-import java.util.Map;
 
 public class MainTests extends Assert {
     @Test(expected = ArgumentExistsException.class)
@@ -29,7 +28,7 @@ public class MainTests extends Assert {
 
     @Test
     public void testParsingRequiredPositionals() {
-        ParseResult result = makeTestParser().run("a");
+        ParsingResult result = makeTestParser().run("a");
         assertEquals("a", result.getString("REQUIRED_VALUE"));
         assertEquals("some value", result.getString("OPTIONAL_VALUE"));
     }
@@ -41,14 +40,14 @@ public class MainTests extends Assert {
 
     @Test
     public void testParsingOptionalPositionals() {
-        ParseResult result = makeTestParser().run("a", "b");
+        ParsingResult result = makeTestParser().run("a", "b");
         assertEquals("a", result.getString("REQUIRED_VALUE"));
         assertEquals("b", result.getString("OPTIONAL_VALUE"));
     }
 
     @Test
     public void testParsingMixedArguments() {
-        ParseResult result = makeTestParser()
+        ParsingResult result = makeTestParser()
                 .run("--some-long-flag", "required", "-V", "optional", "--number", "123", "listItem1", "listItem2",
                         "listItem3");
         assertEquals("123", result.getString("SOME_NUMBER"));
@@ -73,15 +72,15 @@ public class MainTests extends Assert {
         parser.addArgument(new Positional("help2", "b", Positional.Usage.OPTIONAL,
                 "defaultValue2"));
 
-        ParseResult result1 = parser.run();
+        ParsingResult result1 = parser.run();
         assertEquals("defaultValue1", result1.getString("a"));
         assertEquals("defaultValue2", result1.getString("b"));
 
-        ParseResult result2 = parser.run("a");
+        ParsingResult result2 = parser.run("a");
         assertEquals("a", result2.getString("a"));
         assertEquals("defaultValue2", result2.getString("b"));
 
-        ParseResult result3 = parser.run("a", "b");
+        ParsingResult result3 = parser.run("a", "b");
         assertEquals("a", result3.getString("a"));
         assertEquals("b", result3.getString("b"));
     }
