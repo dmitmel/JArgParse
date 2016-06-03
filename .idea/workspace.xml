@@ -2,41 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9631d1e8-1adc-456b-9256-3477449a9880" name="Default" comment="Initial commit&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/Argument.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/ArgumentExistsException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/Flag.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/Option.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/Positional.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/ArgumentExistsException.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/ArgumentList.java" afterPath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/ArgumentList.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/ArgumentParseException.java" afterPath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/ArgumentParseException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/ArgumentParser.java" afterPath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/ArgumentParser.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/HelpInfoGenerator.java" afterPath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/HelpInfoGenerator.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/MissingPositionalsException.java" afterPath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/MissingPositionalsException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/ParsingResult.java" afterPath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/ParsingResult.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/UnexpectedArgumentException.java" afterPath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/UnexpectedArgumentException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/UnexpectedPositionalsException.java" afterPath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/UnexpectedPositionalsException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/UsageInfoGenerator.java" afterPath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/UsageInfoGenerator.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/argtypes/Argument.java" afterPath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/Argument.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/argtypes/Flag.java" afterPath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/Flag.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/argtypes/Option.java" afterPath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/Option.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/argtypes/Positional.java" afterPath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/Positional.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/util/Arrays.java" afterPath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/util/Arrays.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/util/IterableUtils.java" afterPath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/util/IterableUtils.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/util/Lists.java" afterPath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/util/Lists.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/util/Pair.java" afterPath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/util/Pair.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/util/Predicate.java" afterPath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/util/Predicate.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/util/Strings.java" afterPath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/util/Strings.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/util/formatting/SimpleStringToken.java" afterPath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/util/formatting/SimpleStringToken.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/util/formatting/StringToken.java" afterPath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/util/formatting/StringToken.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/util/formatting/StringTokenBuilder.java" afterPath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/util/formatting/StringTokenBuilder.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/github/dmitmel/jargparse/util/formatting/StyledStringToken.java" afterPath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/util/formatting/StyledStringToken.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/tests/FormattingTests.java" afterPath="$PROJECT_DIR$/src/test/java/tests/FormattingTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/tests/MainTests.java" afterPath="$PROJECT_DIR$/src/test/java/tests/MainTests.java" />
     </list>
     <ignored path="JArgParse.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -257,6 +223,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -313,9 +282,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -818,9 +784,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Run_tests - 2016.05.26 at 20h 13m 07s.xml">
-      <configuration name="Run tests" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="Run_tests - 2016.05.26 at 20h 27m 11s.xml">
       <configuration name="Run tests" configurationId="JUnit" />
     </history-entry>
@@ -848,6 +811,9 @@
     <history-entry file="Run_tests - 2016.05.27 at 19h 47m 49s.xml">
       <configuration name="Run tests" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="Run_tests - 2016.06.03 at 17h 02m 12s.xml">
+      <configuration name="Run tests" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
@@ -859,25 +825,25 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2841349" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29076838" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2498618" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2498618" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4337852" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2498618" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cabal" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946378" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4337852" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="165" y="208" width="1655" height="856" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="GhcMod" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1247,7 +1213,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1255,9 +1220,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="339">
           <caret line="47" column="52" selection-start-line="47" selection-start-column="52" selection-end-line="47" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
