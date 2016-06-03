@@ -1,6 +1,6 @@
 package tests;
 
-import com.github.dmitmel.jargparse.util.formatting.StringTokenBuilder;
+import github.dmitmel.jargparse.util.formatting.StringTokenBuilder;
 import org.junit.Assert;
 import org.junit.Test;
 

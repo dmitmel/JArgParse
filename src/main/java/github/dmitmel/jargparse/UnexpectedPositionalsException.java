@@ -1,4 +1,4 @@
-package com.github.dmitmel.jargparse;
+package github.dmitmel.jargparse;
 
 import java.util.List;
 

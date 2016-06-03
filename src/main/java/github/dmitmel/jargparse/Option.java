@@ -1,6 +1,4 @@
-package com.github.dmitmel.jargparse.argtypes;
-
-import com.github.dmitmel.jargparse.ArgumentList;
+package github.dmitmel.jargparse;
 
 public class Option extends Argument {
     public String defaultValue;

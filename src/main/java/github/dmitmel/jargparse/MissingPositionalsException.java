@@ -1,6 +1,4 @@
-package com.github.dmitmel.jargparse;
-
-import com.github.dmitmel.jargparse.argtypes.Positional;
+package github.dmitmel.jargparse;
 
 import java.util.List;
 

@@ -1,12 +1,7 @@
-package com.github.dmitmel.jargparse;
+package github.dmitmel.jargparse;
 
-import com.github.dmitmel.jargparse.argtypes.Argument;
-import com.github.dmitmel.jargparse.argtypes.Flag;
-import com.github.dmitmel.jargparse.argtypes.Option;
-import com.github.dmitmel.jargparse.argtypes.Positional;
-import com.github.dmitmel.jargparse.util.*;
-import com.github.dmitmel.jargparse.util.Arrays;
-import com.github.dmitmel.jargparse.util.IterableUtils;
+import github.dmitmel.jargparse.util.IterableUtils;
+import github.dmitmel.jargparse.util.*;
 
 import java.util.*;
 
@@ -46,6 +41,10 @@ public class ArgumentParser {
 
     private String constructHelpMessage() {
         return argumentList.constructHelpMessage();
+    }
+
+    private String constructUsageMessage() {
+        return argumentList.constructUsageMessage();
     }
 
     public ParsingResult run(String... args) {
@@ -136,7 +135,7 @@ public class ArgumentParser {
 
 
     private void parseArgumentValues(String[] args) {
-        Iterator<String> iterator = Arrays.iteratorFromArray(args);
+        Iterator<String> iterator = github.dmitmel.jargparse.util.Arrays.iteratorFromArray(args);
 
         while (iterator.hasNext()) {
             String stringArg = iterator.next();

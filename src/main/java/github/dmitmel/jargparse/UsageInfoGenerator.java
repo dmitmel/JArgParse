@@ -1,9 +1,7 @@
-package com.github.dmitmel.jargparse;
+package github.dmitmel.jargparse;
 
-import com.github.dmitmel.jargparse.argtypes.Argument;
-import com.github.dmitmel.jargparse.argtypes.Positional;
-import com.github.dmitmel.jargparse.util.Lists;
-import com.github.dmitmel.jargparse.util.formatting.StringTokenBuilder;
+import github.dmitmel.jargparse.util.Lists;
+import github.dmitmel.jargparse.util.formatting.StringTokenBuilder;
 
 import java.util.List;
 
@@ -47,35 +45,44 @@ class UsageInfoGenerator {
     }
 
     private void usageMessageForAnyArgument(Argument argument) {
-        String usagePart = "";
+        StringBuilder usagePart = new StringBuilder(0);
 
         switch (argument.getType()) {
             case POSITIONAL:
-                StringBuilder builder = new StringBuilder(String.format("[%s", argument.metaVar));
+                usagePart.append('[');
+                usagePart.append(argument.metaVar);
                 if (((Positional) argument).usage == Positional.Usage.ZERO_OR_MORE)
-                    builder.append("...");
-                builder.append(']');
-                usagePart = builder.toString();
+                    usagePart.append("...");
+                usagePart.append(']');
                 break;
 
             case FLAG:
-                if (argument.isNameValid())
-                    usagePart = String.format("[%s]", argument.name);
-                else if (argument.isLongNameValid())
-                    usagePart = String.format("[%s]", argument.longName);
+                usagePart.append('[');
+                if (argument.isNameValid()) {
+                    usagePart.append(argument.name);
+
+                    if (argument.isLongNameValid())
+                        usagePart.append(" | ").append(argument.longName);
+                } else if (argument.isLongNameValid())
+                    usagePart.append(argument.longName);
+                usagePart.append(']');
                 // #addArgument(Argument) method checks if name is present, so here won't be "else" condition
                 break;
 
             case OPTION:
-                if (argument.isNameValid())
-                    usagePart = String.format("[%s %s]", argument.name, argument.metaVar);
-                else if (argument.isLongNameValid())
-                    usagePart = String.format("[%s %s]", argument.longName, argument.metaVar);
-                usageMessageBuilder.appendWithNewlineSpacing(
-                        String.format("[%s %s]", argument.name, argument.metaVar), newlineSpacingForUsageArgs);
+                usagePart.append('[');
+                if (argument.isNameValid()) {
+                    usagePart.append(argument.name);
+
+                    if (argument.isLongNameValid())
+                        usagePart.append(" | ").append(argument.longName);
+                } else if (argument.isLongNameValid())
+                    usagePart.append(argument.longName);
+
+                usagePart.append(' ').append(argument.metaVar).append(']');
                 break;
         }
 
-        usageMessageBuilder.appendWithNewlineSpacing(usagePart, newlineSpacingForUsageArgs);
+        usageMessageBuilder.appendWithNewlineSpacing(usagePart.toString(), newlineSpacingForUsageArgs);
     }
 }

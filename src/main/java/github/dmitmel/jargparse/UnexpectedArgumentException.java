@@ -1,6 +1,4 @@
-package com.github.dmitmel.jargparse;
-
-import com.github.dmitmel.jargparse.argtypes.Argument;
+package github.dmitmel.jargparse;
 
 public class UnexpectedArgumentException extends ArgumentParseException {
     private String argument;

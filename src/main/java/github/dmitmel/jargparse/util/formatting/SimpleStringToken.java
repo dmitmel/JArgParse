@@ -1,4 +1,4 @@
-package com.github.dmitmel.jargparse.util.formatting;
+package github.dmitmel.jargparse.util.formatting;
 
 class SimpleStringToken implements StringToken {
     private String value;

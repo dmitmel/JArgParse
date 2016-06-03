@@ -1,9 +1,7 @@
 package tests;
 
 import com.github.dmitmel.jargparse.*;
-import com.github.dmitmel.jargparse.argtypes.Flag;
-import com.github.dmitmel.jargparse.argtypes.Option;
-import com.github.dmitmel.jargparse.argtypes.Positional;
+import github.dmitmel.jargparse.*;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -91,22 +89,31 @@ public class MainTests extends Assert {
     }
 
     private ArgumentParser makeTestParser() {
-        ArgumentParser parser = new ArgumentParser("my_cool_app", "Test application using JArgParse argument parser.",
+        ArgumentParser parser = new ArgumentParser("my_cool_app",
+                "Test application using JArgParse argument parser.",
                 "1.0");
-
-        parser.addArgument(new Positional("This is required positional argument", "REQUIRED_VALUE"));
-
-        parser.addArgument(new Positional("This is optional positional argument with default value", "OPTIONAL_VALUE",
-                Positional.Usage.OPTIONAL, "some value"));
-
-        parser.addArgument(new Positional("This is values list args", "SOME_VALUES",
+        parser.addArgument(new Positional("This is required positional argument",
+                "REQUIRED_VALUE"));
+        parser.addArgument(new Positional("This is optional positional argument with default value",
+                "OPTIONAL_VALUE",
+                Positional.Usage.OPTIONAL,
+                "some value"));
+        parser.addArgument(new Positional("This is values list args",
+                "SOME_VALUES",
                 Positional.Usage.ZERO_OR_MORE));
-
-        parser.addArgument(new Option("-n", "--number", "Input number", "SOME_NUMBER", "1"));
-
-        parser.addArgument(new Flag("-V", "--verbose", "Print what code does", "VERBOSE"));
-
-        parser.addArgument(new Flag(null, "--some-long-flag", "Some long flag", "SOME_LONG_FLAG"));
+        parser.addArgument(new Option("-n",
+                "--number",
+                "Input number",
+                "SOME_NUMBER",
+                "1"));
+        parser.addArgument(new Flag("-V",
+                "--verbose",
+                "Print what code does",
+                "VERBOSE"));
+        parser.addArgument(new Flag(null,
+                "--some-long-flag",
+                "Some long flag",
+                "SOME_LONG_FLAG"));
 
         return parser;
     }

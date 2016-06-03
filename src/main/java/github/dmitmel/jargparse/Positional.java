@@ -1,6 +1,6 @@
-package com.github.dmitmel.jargparse.argtypes;
+package github.dmitmel.jargparse;
 
-import com.github.dmitmel.jargparse.util.Predicate;
+import github.dmitmel.jargparse.util.Predicate;
 
 public class Positional extends Argument {
     public Usage usage;
@@ -24,6 +24,11 @@ public class Positional extends Argument {
         super.metaVar = metaVar;
         this.usage = usage;
         this.defaultValue = defaultValue;
+    }
+
+    @Override
+    public String toString() {
+        return metaVar;
     }
 
     public enum Usage {

@@ -1,11 +1,8 @@
-package com.github.dmitmel.jargparse;
+package github.dmitmel.jargparse;
 
-import com.github.dmitmel.jargparse.argtypes.Argument;
-import com.github.dmitmel.jargparse.argtypes.Flag;
-import com.github.dmitmel.jargparse.argtypes.Option;
-import com.github.dmitmel.jargparse.util.Lists;
-import com.github.dmitmel.jargparse.util.Strings;
-import com.github.dmitmel.jargparse.util.formatting.StringTokenBuilder;
+import github.dmitmel.jargparse.util.Lists;
+import github.dmitmel.jargparse.util.Strings;
+import github.dmitmel.jargparse.util.formatting.StringTokenBuilder;
 
 import java.util.List;
 

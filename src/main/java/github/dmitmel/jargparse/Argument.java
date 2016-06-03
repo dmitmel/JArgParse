@@ -1,7 +1,6 @@
-package com.github.dmitmel.jargparse.argtypes;
+package github.dmitmel.jargparse;
 
-import com.github.dmitmel.jargparse.ArgumentList;
-import com.github.dmitmel.jargparse.util.Predicate;
+import github.dmitmel.jargparse.util.Predicate;
 
 public abstract class Argument {
     public String name;             // Field is ignored in positional args
@@ -21,10 +20,10 @@ public abstract class Argument {
      *     <li>They can be used as keys for values in result map.</li>
      * </ol>
      */
-    public String metaVar;
+    String metaVar;
 
     // You can see shortenings of this method (you don't need to specify type)
-    public static Argument findFromArgumentListByName(ArgumentList argumentList, Type type,
+    static Argument findFromArgumentListByName(ArgumentList argumentList, Type type,
                                                       String receivedName) {
         for (Argument argument : argumentList)
             if (argument.getType() == type)
@@ -36,21 +35,21 @@ public abstract class Argument {
     }
 
     // Compare operations
-    public boolean longNameEquals(String other) {
+    boolean longNameEquals(String other) {
         return longName != null && longName.equals(other);
     }
-    public boolean nameEquals(String other) {
+    boolean nameEquals(String other) {
         return name != null && name.equals(other);
     }
 
     // Definition test operations
-    public boolean isMetaVarDefined() {
+    boolean isMetaVarDefined() {
         return getType() != Type.FLAG && metaVar != null && !metaVar.isEmpty();
     }
-    public boolean isLongNameValid() {
+    boolean isLongNameValid() {
         return getType() != Type.POSITIONAL && longName != null && longName.startsWith("--");
     }
-    public boolean isNameValid() {
+    boolean isNameValid() {
         return getType() != Type.POSITIONAL && name != null && name.startsWith("-");
     }
 
@@ -61,7 +60,7 @@ public abstract class Argument {
      * @return name of argument if it's valid, otherwise returns long name
      * @throws IllegalStateException if neither long name nor short aren't valid
      */
-    public String getSuitableName() {
+    String getSuitableName() {
         String suitable;
         if (isNameValid())
             suitable = name;
