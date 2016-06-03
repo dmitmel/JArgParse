@@ -1,6 +1,5 @@
 package tests;
 
-import com.github.dmitmel.jargparse.*;
 import github.dmitmel.jargparse.*;
 import org.junit.Assert;
 import org.junit.Test;
