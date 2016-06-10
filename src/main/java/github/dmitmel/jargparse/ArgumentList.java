@@ -77,7 +77,7 @@ public class ArgumentList implements List<Argument> {
 
         for (Argument testing : underlying) {
             if (testing.getType() == Argument.Type.OPTION || testing.getType() == Argument.Type.FLAG) {
-                if (testing.name.equals(newArgument.name)) {
+                if (testing.nameEquals(newArgument.name)) {
                     thereAre2IdenticalNames = true;
                 }
             }

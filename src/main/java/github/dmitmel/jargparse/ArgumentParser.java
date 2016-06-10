@@ -5,10 +5,12 @@ import github.dmitmel.jargparse.util.*;
 
 import java.util.*;
 
+/**
+ * Argument parser. <span color="#A52500"><b>ISN'T THREAD-SAFE!</b></span>
+ */
 public class ArgumentParser {
     public String appName;
     public String appDescription;
-    public String appVersion;
     public ArgumentList argumentList;
 
     // Collections for parsing
@@ -17,14 +19,13 @@ public class ArgumentParser {
     private Map<String, Boolean> flagValues = new HashMap<>(0);
     private Map<String, Object> output = new HashMap<>(0);
 
-    public ArgumentParser(String appName, String appDescription, String appVersion) {
-        this(appName, appDescription, appVersion, new ArrayList<Argument>());
+    public ArgumentParser(String appName, String appDescription) {
+        this(appName, appDescription, new ArrayList<Argument>());
     }
 
-    public ArgumentParser(String appName, String appDescription, String appVersion, List<Argument> patternArguments) {
+    public ArgumentParser(String appName, String appDescription, List<Argument> patternArguments) {
         this.appName = appName;
         this.appDescription = appDescription;
-        this.appVersion = appVersion;
         this.argumentList = new ArgumentList(appName, appDescription, patternArguments);
 
         addInitialArguments();
@@ -39,12 +40,19 @@ public class ArgumentParser {
         argumentList.add(newArgument);
     }
 
-    private String constructHelpMessage() {
+    public String constructHelpMessage() {
         return argumentList.constructHelpMessage();
     }
 
-    private String constructUsageMessage() {
+    public String constructUsageMessage() {
         return argumentList.constructUsageMessage();
+    }
+
+    /**
+     * Equivalent to {@link #run(String...)}, but for Scala developers.
+     */
+    public ParsingResult apply(String... args) {
+        return run(args);
     }
 
     public ParsingResult run(String... args) {
@@ -57,17 +65,10 @@ public class ArgumentParser {
         registerNotReceivedNonPositionals();
         putNonPositionalsToOutputData();
 
-        if ((boolean) output.get("SHOW_VERSION")) {
-            System.out.println(appVersion);
-            return ParsingResult.emptyResult();
-        } else if ((boolean) output.get("SHOW_HELP")) {
-            System.out.println(constructHelpMessage());
-            return ParsingResult.emptyResult();
-        }
+        if (!((boolean) output.get("SHOW_HELP")) && !((boolean) output.get("SHOW_VERSION")))
+            putAllPositionalsToOutputData();
 
-        putAllPositionalsToOutputData();
-
-        return ParsingResult.realResult(output);
+        return new ParsingResult(output);
     }
 
     private void putNonPositionalsToOutputData() {
@@ -169,8 +170,7 @@ public class ArgumentParser {
     }
 
     private void disableNotReceivedOption(Option patternArgument) {
-        if (patternArgument.defaultValue != null)
-            optionValues.put(patternArgument.name, patternArgument.defaultValue);
+        optionValues.put(patternArgument.getSuitableName(), patternArgument.defaultValue);
     }
 
     private boolean isOptionSet(Argument patternArgument) {

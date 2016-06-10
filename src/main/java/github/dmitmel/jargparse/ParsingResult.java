@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public abstract class ParsingResult implements Map<String, Object> {
+public class ParsingResult implements Map<String, Object> {
     private Map<String, Object> underlying;
 
     public ParsingResult(Map<String, Object> underlying) {
@@ -37,34 +37,5 @@ public abstract class ParsingResult implements Map<String, Object> {
     @SuppressWarnings("unchecked")
     public List<String> getList(String name) {
         return (List<String>) get(name);
-    }
-
-    /**
-     * Returns {@code false} if {@link ArgumentParser#run(String...)} printed help or version, otherwise -
-     * {@code true}.
-     * @return {@code false} if {@link ArgumentParser#run(String...)} printed help or version, otherwise -
-     * {@code true}.
-     */
-    public abstract boolean isRealResult();
-
-    public static ParsingResult realResult(Map<String, Object> map) {
-        return new ParsingResult(map) {
-            @Override
-            public boolean isRealResult() {
-                return true;
-            }
-        };
-    }
-
-    public static ParsingResult emptyResult() {
-        // I give null with purpose, so you can't manipulate with empty result
-        return new ParsingResult(null) {
-            @Override
-            public boolean isRealResult() {
-                return false;
-            }
-
-            @Override public int size() { return 0; }
-        };
     }
 }

@@ -1,0 +1,96 @@
+<link rel="stylesheet" href="file:///home/dmitriy/Libraries/highlight.js/github-markdown-view-style.css">
+<link rel="stylesheet" href="file:///home/dmitriy/Libraries/highlight.js/styles/github-gist.css">
+<script src="file:///home/dmitriy/Libraries/highlight.js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<style>.hljs {
+    background-color: #f8f8f8;
+}
+.markdown-body {
+    padding: 10px 30px;
+}</style>
+
+<article class="markdown-body">
+<h1>JArgParse - quick tutorial</h1>
+<h2>Introduction</h2>
+<p>JArgParse is a Java library for parsing command-line arguments. It's based on the Python module <a href="https://docs.python.org/2.7/library/argparse.html"><code>arparse</code></a>.</p>
+<h2>Usage</h2>
+<p>JArgParse doesn't use de-serializing or annotations to parse arguments. To use it, you must follow this steps:</p>
+<ol>
+<li>Make parser</li>
+<li>Define parsing pattern, using pattern list in parser</li>
+<li>Parse arguments/Run parser</li>
+<li>PROFIT!!1111!!!!1!!1!1!1111111!!!111!!!!11!1</li>
+</ol>
+<p>Now, I'll explain each step.</p>
+<h4>1: Make Parser</h4>
+<p>You have to create instance of parser, which can be found in class <code>github.dmitmel.jargparse.ArgumentParser</code>:</p>
+<pre><code class="hljs-java">// Somewhere in imports:
+import github.dmitmel.jarparse.*;
+
+// Somewhere in code (for example, in main method):
+ArgumentParser parser = new ArgumentParser(&quot;app_name&quot;, &quot;app description&quot;)
+</code></pre>
+<h4>2: Define parsing pattern, using pattern list in parser</h4>
+<p>To define parsing pattern, you have to add some instances of <code>github.dmitmel.jargparse.Argument</code> to argument list
+in parser. Parser contains public field <code>github.dmitmel.jargparse.ArgumentList argumentList</code> (Class
+<code>ArgumentList</code> is a simple list, but with some additions, like generating help info). Also, you can add them
+using method <code>addArgument</code> in parser. Let's define pattern for script with this usage:</p>
+<pre><code class="hljs-bnf">app_name [ -f | --flag ] [ --just-long-flag ] [ -o | --option OPTION ] [ --long_option LONG_OPTION ] [REQUIRED_VALUE] [OPTIONAL_VALUE] [VALUES_LIST...]
+</code></pre>
+<p>Java code:</p>
+<pre><code class="hljs-java">parser.addArgument(new Flag(&quot;-f&quot;, &quot;--flag&quot;, &quot;some help for flag&quot;, &quot;FLAG&quot;));
+parser.addArgument(new Flag(null, &quot;--just-a-long-flag&quot;, &quot;flag with only long name&quot;, &quot;LONG_FLAG&quot;));
+parser.addArgument(new Option(&quot;-o&quot;, &quot;--option&quot;, &quot;some help for option&quot;, &quot;OPTION&quot;, &quot;default value&quot;));
+parser.addArgument(new Option(null, &quot;--long-option&quot;, &quot;option with only long name&quot;, &quot;LONG_OPTION&quot;, &quot;long default value&quot;));
+// It matters in which sequence you will add positionals, but it doesn't matter where you will add positionals.
+// You can even add them between flags and options!
+parser.addArgument(new Positional(&quot;some help for positional&quot;, &quot;REQUIRED_VALUE&quot;));
+parser.addArgument(new Positional(&quot;positional with optional usage&quot;, &quot;OPTIONAL_VALUE&quot;, Positional.Usage.OPTIONAL, &quot;default value&quot;));
+parser.addArgument(new Positional(&quot;list of values&quot;, &quot;VALUES_LIST&quot;, Positional.Usage.ZERO_OR_MORE));
+</code></pre>
+<h4>3: Parse arguments/Run parser</h4>
+<p>Parser contains method <code>run</code>, which receives array with arguments to parse and returns
+<code>github.dmitmel.jargparse.ParsingResult</code> (which is simple map, but with some additions). If there's some
+errors in parsing, it throws <code>github.dmitmel.jargparse.ArgumentParseException</code>. Example:</p>
+<pre><code class="hljs-java">public static void main(String[] args) {
+    // Some initializations...
+    
+    ParsingResult result = parser.run(args);
+    
+    // Then, application logic
+}
+</code></pre>
+<h4>4: PROFIT!!1111!!!!1!!1!1!1111111!!!111!!!!11!1</h4>
+<p>Parser not only parses arguments, but also it can generate help/usage info, convert
+<code>github.dmitmel.jargparse.ArgumentParseException</code>s to strings.</p>
+<h2>Not supported</h2>
+<p>Here's a table of additional things that JArgParse can't do.</p>
+<table>
+<thead>
+<tr>
+<th>Thing</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Parse several short flags in one token</td>
+<td><code>-abc</code> is equivalent to <code>-a -b -c</code></td>
+</tr>
+<tr>
+<td>Parse long options</td>
+<td><code>-key=value</code></td>
+</tr>
+<tr>
+<td>Parse dynamic options</td>
+<td><code>-Dkey=value</code></td>
+</tr>
+</tbody>
+</table>
+<h2>License</h2>
+<h5>Copyright (c) 2016 Meleshko Dmitriy</h5>
+<p>Licensed under the Apache License, Version 2.0. You can obtain a copy of the License at
+<a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a>.</p>
+<p>License isn't copyleft and it's open source. This means, that you can do anything with this code, copy
+and upgrade it. And use it in your projects.</p>
+</article>
