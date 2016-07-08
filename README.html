@@ -24,7 +24,7 @@
 <p>Now, I'll explain each step.</p>
 <h4>1: Make Parser</h4>
 <p>You have to create instance of parser, which can be found in class <code>github.dmitmel.jargparse.ArgumentParser</code>:</p>
-<pre><code class="hljs-java">// Somewhere in imports:
+<pre><code class="language-java">// Somewhere in imports:
 import github.dmitmel.jarparse.*;
 
 // Somewhere in code (for example, in main method):
@@ -35,10 +35,10 @@ ArgumentParser parser = new ArgumentParser(&quot;app_name&quot;, &quot;app descr
 in parser. Parser contains public field <code>github.dmitmel.jargparse.ArgumentList argumentList</code> (Class
 <code>ArgumentList</code> is a simple list, but with some additions, like generating help info). Also, you can add them
 using method <code>addArgument</code> in parser. Let's define pattern for script with this usage:</p>
-<pre><code class="hljs-bnf">app_name [ -f | --flag ] [ --just-long-flag ] [ -o | --option OPTION ] [ --long_option LONG_OPTION ] [REQUIRED_VALUE] [OPTIONAL_VALUE] [VALUES_LIST...]
+<pre><code class="language-bnf">app_name [ -f | --flag ] [ --just-long-flag ] [ -o | --option OPTION ] [ --long_option LONG_OPTION ] [REQUIRED_VALUE] [OPTIONAL_VALUE] [VALUES_LIST...]
 </code></pre>
 <p>Java code:</p>
-<pre><code class="hljs-java">parser.addArgument(new Flag(&quot;-f&quot;, &quot;--flag&quot;, &quot;some help for flag&quot;, &quot;FLAG&quot;));
+<pre><code class="language-java">parser.addArgument(new Flag(&quot;-f&quot;, &quot;--flag&quot;, &quot;some help for flag&quot;, &quot;FLAG&quot;));
 parser.addArgument(new Flag(null, &quot;--just-a-long-flag&quot;, &quot;flag with only long name&quot;, &quot;LONG_FLAG&quot;));
 parser.addArgument(new Option(&quot;-o&quot;, &quot;--option&quot;, &quot;some help for option&quot;, &quot;OPTION&quot;, &quot;default value&quot;));
 parser.addArgument(new Option(null, &quot;--long-option&quot;, &quot;option with only long name&quot;, &quot;LONG_OPTION&quot;, &quot;long default value&quot;));
@@ -52,7 +52,7 @@ parser.addArgument(new Positional(&quot;list of values&quot;, &quot;VALUES_LIST&
 <p>Parser contains method <code>run</code>, which receives array with arguments to parse and returns
 <code>github.dmitmel.jargparse.ParsingResult</code> (which is simple map, but with some additions). If there's some
 errors in parsing, it throws <code>github.dmitmel.jargparse.ArgumentParseException</code>. Example:</p>
-<pre><code class="hljs-java">public static void main(String[] args) {
+<pre><code class="language-java">public static void main(String[] args) {
     // Some initializations...
     
     ParsingResult result = parser.run(args);

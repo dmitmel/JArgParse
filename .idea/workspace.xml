@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9631d1e8-1adc-456b-9256-3477449a9880" name="Default" comment="Initial commit&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/dmitriy.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/github/dmitmel/jargparse/ParsingResult$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/main/classes/github/dmitmel/jargparse/ParsingResult$2.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/jar/JArgParse-1.0-sources.zip" afterPath="$PROJECT_DIR$/build/jar/JArgParse-1.0-sources.zip" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/jar/JArgParse-1.0.jar" afterPath="$PROJECT_DIR$/build/jar/JArgParse-1.0.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/classes/github/dmitmel/jargparse/ArgumentList.class" afterPath="$PROJECT_DIR$/build/main/classes/github/dmitmel/jargparse/ArgumentList.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/classes/github/dmitmel/jargparse/ArgumentParser$1.class" afterPath="$PROJECT_DIR$/build/main/classes/github/dmitmel/jargparse/ArgumentParser$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/classes/github/dmitmel/jargparse/ArgumentParser.class" afterPath="$PROJECT_DIR$/build/main/classes/github/dmitmel/jargparse/ArgumentParser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/classes/github/dmitmel/jargparse/ParsingResult.class" afterPath="$PROJECT_DIR$/build/main/classes/github/dmitmel/jargparse/ParsingResult.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/test/classes/tests/MainTests.class" afterPath="$PROJECT_DIR$/build/test/classes/tests/MainTests.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/ArgumentList.java" afterPath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/ArgumentList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/ArgumentParser.java" afterPath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/ArgumentParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/ParsingResult.java" afterPath="$PROJECT_DIR$/src/main/java/github/dmitmel/jargparse/ParsingResult.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/tests/MainTests.java" afterPath="$PROJECT_DIR$/src/test/java/tests/MainTests.java" />
-    </list>
+    <list default="true" id="9631d1e8-1adc-456b-9256-3477449a9880" name="Default" comment="Initial commit&#10;" />
     <ignored path="JArgParse.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -860,7 +842,7 @@
       <workItem from="1465534778264" duration="1430000" />
       <workItem from="1465540809719" duration="62000" />
       <workItem from="1465541353340" duration="1219000" />
-      <workItem from="1465543242782" duration="56000" />
+      <workItem from="1465543242782" duration="204000" />
     </task>
     <servers />
   </component>
@@ -897,7 +879,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5853000" />
+    <option name="totallyTimeSpent" value="6001000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
