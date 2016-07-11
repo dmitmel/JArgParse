@@ -21,7 +21,7 @@ You have to create instance of parser, which can be found in class `github.dmitm
 import github.dmitmel.jarparse.*;
 
 // Somewhere in code (for example, in main method):
-ArgumentParser parser = new ArgumentParser("app_name", "app description")
+ArgumentParser parser = new ArgumentParser("app_name", "app description", "1.0");      // 1.0 is app version
 ```
 
 #### 2: Define parsing pattern, using pattern list in parser

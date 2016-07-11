@@ -7,6 +7,7 @@
     <property name="dir.src.root" value="./src" />
     <property name="dir.main.src" value="${dir.src.root}/main/java" />
     <property name="dir.main.resources" value="${dir.src.root}/main/resources" />
+    <property name="dir.main.gen" value="${dir.src.root}/gen/java" />
 
     <property name="dir.test.src" value="${dir.src.root}/test/java" />
     <property name="dir.test.resources" value="${dir.src.root}/test/resources" />
@@ -52,9 +53,12 @@
 
         <!-- Option "includeantruntime" is very important - it allows compiling multiple times.
              Option "includejavaruntime" just adds default JRE-libraries to classpath. -->
-        <javac srcdir="${dir.main.src}" destdir="${dir.main.bin}" debug="true" includeantruntime="yes"
-               includejavaruntime="yes" encoding="UTF-8">
+        <javac srcdir="${dir.main.src}" destdir="${dir.main.bin}" debug="true" includeantruntime="true"
+               includejavaruntime="true" encoding="UTF-8">
             <!-- Add your paths to libraries here. -->
+
+            <!-- Path to generated sources. -->
+            <sourcepath location="${dir.main.gen}" />
         </javac>
     </target>
 
@@ -63,8 +67,8 @@
 
         <!-- Option "includeantruntime" is very important - it allows compiling multiple times.
              Option "includejavaruntime" just adds default JRE-libraries to classpath. -->
-        <javac srcdir="${dir.test.src}" destdir="${dir.test.bin}" debug="true" includeantruntime="yes"
-               includejavaruntime="yes" encoding="UTF-8">
+        <javac srcdir="${dir.test.src}" destdir="${dir.test.bin}" debug="true" includeantruntime="true"
+               includejavaruntime="true" encoding="UTF-8">
             <classpath location="${dir.main.bin}" />
             <!-- Paths to JUnit. -->
             <classpath location="${dir.libs}/junit-4.12.jar" />
@@ -73,14 +77,14 @@
     </target>
 
     <target name="resources">
-        <copy todir="${dir.main.resources}">
-            <fileset dir="${dir.main.bin}" includes="**"/>
+        <copy todir="${dir.main.bin}">
+            <fileset dir="${dir.main.resources}" includes="**/*"/>
         </copy>
     </target>
 
     <target name="test:resources">
-        <copy todir="${dir.test.resources}">
-            <fileset dir="${dir.test.bin}" includes="**"/>
+        <copy todir="${dir.test.bin}">
+            <fileset dir="${dir.test.resources}" includes="**/*"/>
         </copy>
     </target>
 
@@ -103,7 +107,7 @@
 
     <target name="sources">
         <zip destfile="${dir.main.jar}/${ant.project.name}-${product.version}-sources.zip">
-            <fileset dir="./" includes="src/**" />
+            <fileset dir="./" includes="src/**/*" />
         </zip>
     </target>
 

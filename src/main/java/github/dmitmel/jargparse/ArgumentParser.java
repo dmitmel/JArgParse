@@ -12,6 +12,7 @@ public class ArgumentParser {
     public String appName;
     public String appDescription;
     public ArgumentList argumentList;
+    public String appVersion;
 
     // Collections for parsing
     private List<String> positionalValues = new ArrayList<>(0);
@@ -19,13 +20,14 @@ public class ArgumentParser {
     private Map<String, Boolean> flagValues = new HashMap<>(0);
     private Map<String, Object> output = new HashMap<>(0);
 
-    public ArgumentParser(String appName, String appDescription) {
-        this(appName, appDescription, new ArrayList<Argument>());
+    public ArgumentParser(String appName, String appDescription, String appVersion) {
+        this(appName, appDescription, appVersion, new ArrayList<Argument>());
     }
 
-    public ArgumentParser(String appName, String appDescription, List<Argument> patternArguments) {
+    public ArgumentParser(String appName, String appDescription, String appVersion, List<Argument> patternArguments) {
         this.appName = appName;
         this.appDescription = appDescription;
+        this.appVersion = appVersion;
         this.argumentList = new ArgumentList(appName, appDescription, patternArguments);
 
         addInitialArguments();
@@ -65,8 +67,15 @@ public class ArgumentParser {
         registerNotReceivedNonPositionals();
         putNonPositionalsToOutputData();
 
-        if (!((boolean) output.get("SHOW_HELP")) && !((boolean) output.get("SHOW_VERSION")))
+        if ((boolean) output.get("SHOW_HELP")) {
+            System.out.println(constructHelpMessage());
+            System.exit(0);
+        } else if ((boolean) output.get("SHOW_VERSION")) {
+            System.out.println(appVersion);
+            System.exit(0);
+        } else {
             putAllPositionalsToOutputData();
+        }
 
         return new ParsingResult(output);
     }

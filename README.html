@@ -1,70 +1,67 @@
-<link rel="stylesheet" href="file:///home/dmitriy/Libraries/highlight.js/github-markdown-view-style.css">
-<link rel="stylesheet" href="file:///home/dmitriy/Libraries/highlight.js/styles/github-gist.css">
-<script src="file:///home/dmitriy/Libraries/highlight.js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-<style>.hljs {
-    background-color: #f8f8f8;
-}
-.markdown-body {
-    padding: 10px 30px;
-}</style>
+<!DOCTYPE html>
 
-<article class="markdown-body">
-<h1>JArgParse - quick tutorial</h1>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+
+    <body class="markdown-body">
+<!-- Page content mustn't be aligned, because of code blocks which will be moved. -->
+<h1>JArgParse</h1>
 <h2>Introduction</h2>
-<p>JArgParse is a Java library for parsing command-line arguments. It's based on the Python module <a href="https://docs.python.org/2.7/library/argparse.html"><code>arparse</code></a>.</p>
+<p>JArgParse is a Java library for parsing command-line arguments. It’s based on the Python module <a href="https://docs.python.org/2.7/library/argparse.html"><code>arparse</code></a>.</p>
 <h2>Usage</h2>
-<p>JArgParse doesn't use de-serializing or annotations to parse arguments. To use it, you must follow this steps:</p>
+<p>JArgParse doesn’t use de-serializing or annotations to parse arguments. To use it, you must follow this steps:</p>
 <ol>
 <li>Make parser</li>
 <li>Define parsing pattern, using pattern list in parser</li>
 <li>Parse arguments/Run parser</li>
-<li>PROFIT!!1111!!!!1!!1!1!1111111!!!111!!!!11!1</li>
+<li>PROFIT!!1111!!!1!!1!1!1111111!!!111!!!11!1</li>
 </ol>
-<p>Now, I'll explain each step.</p>
+<p>Now, I’ll explain each step.</p>
 <h4>1: Make Parser</h4>
 <p>You have to create instance of parser, which can be found in class <code>github.dmitmel.jargparse.ArgumentParser</code>:</p>
-<pre><code class="language-java">// Somewhere in imports:
-import github.dmitmel.jarparse.*;
+<pre><code class="java"><span class="hljs-comment">// Somewhere in imports:</span>
+<span class="hljs-keyword">import</span> github.dmitmel.jarparse.*;
 
-// Somewhere in code (for example, in main method):
-ArgumentParser parser = new ArgumentParser(&quot;app_name&quot;, &quot;app description&quot;)
+<span class="hljs-comment">// Somewhere in code (for example, in main method):</span>
+ArgumentParser parser = <span class="hljs-keyword">new</span> ArgumentParser(<span class="hljs-string">"app_name"</span>, <span class="hljs-string">"app description"</span>, <span class="hljs-string">"1.0"</span>);      <span class="hljs-comment">// 1.0 is app version</span>
 </code></pre>
 <h4>2: Define parsing pattern, using pattern list in parser</h4>
 <p>To define parsing pattern, you have to add some instances of <code>github.dmitmel.jargparse.Argument</code> to argument list
 in parser. Parser contains public field <code>github.dmitmel.jargparse.ArgumentList argumentList</code> (Class
 <code>ArgumentList</code> is a simple list, but with some additions, like generating help info). Also, you can add them
-using method <code>addArgument</code> in parser. Let's define pattern for script with this usage:</p>
-<pre><code class="language-bnf">app_name [ -f | --flag ] [ --just-long-flag ] [ -o | --option OPTION ] [ --long_option LONG_OPTION ] [REQUIRED_VALUE] [OPTIONAL_VALUE] [VALUES_LIST...]
+using method <code>addArgument</code> in parser. Let’s define pattern for script with this usage:</p>
+<pre><code class="bnf">app_name [ -f | --flag ] [ --just-long-flag ] [ -o | --option OPTION ] [ --long_option LONG_OPTION ] [REQUIRED_VALUE] [OPTIONAL_VALUE] [VALUES_LIST...]
 </code></pre>
 <p>Java code:</p>
-<pre><code class="language-java">parser.addArgument(new Flag(&quot;-f&quot;, &quot;--flag&quot;, &quot;some help for flag&quot;, &quot;FLAG&quot;));
-parser.addArgument(new Flag(null, &quot;--just-a-long-flag&quot;, &quot;flag with only long name&quot;, &quot;LONG_FLAG&quot;));
-parser.addArgument(new Option(&quot;-o&quot;, &quot;--option&quot;, &quot;some help for option&quot;, &quot;OPTION&quot;, &quot;default value&quot;));
-parser.addArgument(new Option(null, &quot;--long-option&quot;, &quot;option with only long name&quot;, &quot;LONG_OPTION&quot;, &quot;long default value&quot;));
-// It matters in which sequence you will add positionals, but it doesn't matter where you will add positionals.
-// You can even add them between flags and options!
-parser.addArgument(new Positional(&quot;some help for positional&quot;, &quot;REQUIRED_VALUE&quot;));
-parser.addArgument(new Positional(&quot;positional with optional usage&quot;, &quot;OPTIONAL_VALUE&quot;, Positional.Usage.OPTIONAL, &quot;default value&quot;));
-parser.addArgument(new Positional(&quot;list of values&quot;, &quot;VALUES_LIST&quot;, Positional.Usage.ZERO_OR_MORE));
+<pre><code class="java">parser.addArgument(<span class="hljs-keyword">new</span> Flag(<span class="hljs-string">"-f"</span>, <span class="hljs-string">"--flag"</span>, <span class="hljs-string">"some help for flag"</span>, <span class="hljs-string">"FLAG"</span>));
+parser.addArgument(<span class="hljs-keyword">new</span> Flag(<span class="hljs-keyword">null</span>, <span class="hljs-string">"--just-a-long-flag"</span>, <span class="hljs-string">"flag with only long name"</span>, <span class="hljs-string">"LONG_FLAG"</span>));
+parser.addArgument(<span class="hljs-keyword">new</span> Option(<span class="hljs-string">"-o"</span>, <span class="hljs-string">"--option"</span>, <span class="hljs-string">"some help for option"</span>, <span class="hljs-string">"OPTION"</span>, <span class="hljs-string">"default value"</span>));
+parser.addArgument(<span class="hljs-keyword">new</span> Option(<span class="hljs-keyword">null</span>, <span class="hljs-string">"--long-option"</span>, <span class="hljs-string">"option with only long name"</span>, <span class="hljs-string">"LONG_OPTION"</span>, <span class="hljs-string">"long default value"</span>));
+<span class="hljs-comment">// It matters in which sequence you will add positionals, but it doesn't matter where you will add positionals.</span>
+<span class="hljs-comment">// You can even add them between flags and options!</span>
+parser.addArgument(<span class="hljs-keyword">new</span> Positional(<span class="hljs-string">"some help for positional"</span>, <span class="hljs-string">"REQUIRED_VALUE"</span>));
+parser.addArgument(<span class="hljs-keyword">new</span> Positional(<span class="hljs-string">"positional with optional usage"</span>, <span class="hljs-string">"OPTIONAL_VALUE"</span>, Positional.Usage.OPTIONAL, <span class="hljs-string">"default value"</span>));
+parser.addArgument(<span class="hljs-keyword">new</span> Positional(<span class="hljs-string">"list of values"</span>, <span class="hljs-string">"VALUES_LIST"</span>, Positional.Usage.ZERO_OR_MORE));
 </code></pre>
 <h4>3: Parse arguments/Run parser</h4>
 <p>Parser contains method <code>run</code>, which receives array with arguments to parse and returns
-<code>github.dmitmel.jargparse.ParsingResult</code> (which is simple map, but with some additions). If there's some
+<code>github.dmitmel.jargparse.ParsingResult</code> (which is simple map, but with some additions). If there’s some
 errors in parsing, it throws <code>github.dmitmel.jargparse.ArgumentParseException</code>. Example:</p>
-<pre><code class="language-java">public static void main(String[] args) {
-    // Some initializations...
+<pre><code class="java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+    <span class="hljs-comment">// Some initializations...</span>
     
     ParsingResult result = parser.run(args);
     
-    // Then, application logic
+    <span class="hljs-comment">// Then, application logic</span>
 }
 </code></pre>
-<h4>4: PROFIT!!1111!!!!1!!1!1!1111111!!!111!!!!11!1</h4>
+<h4>4: PROFIT!!1111!!!1!!1!1!1111111!!!111!!!11!1</h4>
 <p>Parser not only parses arguments, but also it can generate help/usage info, convert
 <code>github.dmitmel.jargparse.ArgumentParseException</code>s to strings.</p>
 <h2>Not supported</h2>
-<p>Here's a table of additional things that JArgParse can't do.</p>
+<p>Here’s a table of additional things that JArgParse can’t do.</p>
 <table>
 <thead>
 <tr>
@@ -88,9 +85,786 @@ errors in parsing, it throws <code>github.dmitmel.jargparse.ArgumentParseExcepti
 </tbody>
 </table>
 <h2>License</h2>
-<h5>Copyright (c) 2016 Meleshko Dmitriy</h5>
+<h5>Copyright © 2016 Meleshko Dmitriy</h5>
 <p>Licensed under the Apache License, Version 2.0. You can obtain a copy of the License at
 <a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a>.</p>
-<p>License isn't copyleft and it's open source. This means, that you can do anything with this code, copy
+<p>License isn’t copyleft and it’s open source. This means, that you can do anything with this code, copy
 and upgrade it. And use it in your projects.</p>
-</article>
+
+
+    </body>
+
+    <style>@font-face {
+      font-family: octicons-link;
+      src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+    }
+    
+    .markdown-body {
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+      color: #333;
+      font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-size: 16px;
+      line-height: 1.6;
+      word-wrap: break-word;
+    }
+    
+    .markdown-body a {
+      background-color: transparent;
+      -webkit-text-decoration-skip: objects;
+    }
+    
+    .markdown-body a:active,
+    .markdown-body a:hover {
+      outline-width: 0;
+    }
+    
+    .markdown-body strong {
+      font-weight: inherit;
+    }
+    
+    .markdown-body strong {
+      font-weight: bolder;
+    }
+    
+    .markdown-body h1 {
+      font-size: 2em;
+      margin: 0.67em 0;
+    }
+    
+    .markdown-body img {
+      border-style: none;
+    }
+    
+    .markdown-body svg:not(:root) {
+      overflow: hidden;
+    }
+    
+    .markdown-body code,
+    .markdown-body kbd,
+    .markdown-body pre {
+      font-family: monospace, monospace;
+      font-size: 1em;
+    }
+    
+    .markdown-body hr {
+      box-sizing: content-box;
+      height: 0;
+      overflow: visible;
+    }
+    
+    .markdown-body input {
+      font: inherit;
+      margin: 0;
+    }
+    
+    .markdown-body input {
+      overflow: visible;
+    }
+    
+    .markdown-body button:-moz-focusring,
+    .markdown-body [type="button"]:-moz-focusring,
+    .markdown-body [type="reset"]:-moz-focusring,
+    .markdown-body [type="submit"]:-moz-focusring {
+      outline: 1px dotted ButtonText;
+    }
+    
+    .markdown-body [type="checkbox"] {
+      box-sizing: border-box;
+      padding: 0;
+    }
+    
+    .markdown-body table {
+      border-spacing: 0;
+      border-collapse: collapse;
+    }
+    
+    .markdown-body td,
+    .markdown-body th {
+      padding: 0;
+    }
+    
+    .markdown-body * {
+      box-sizing: border-box;
+    }
+    
+    .markdown-body input {
+      font: 13px/1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+    
+    .markdown-body a {
+      color: #4078c0;
+      text-decoration: none;
+    }
+    
+    .markdown-body a:hover,
+    .markdown-body a:active {
+      text-decoration: underline;
+    }
+    
+    .markdown-body hr {
+      height: 0;
+      margin: 15px 0;
+      overflow: hidden;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .markdown-body hr::before {
+      display: table;
+      content: "";
+    }
+    
+    .markdown-body hr::after {
+      display: table;
+      clear: both;
+      content: "";
+    }
+    
+    .markdown-body h1,
+    .markdown-body h2,
+    .markdown-body h3,
+    .markdown-body h4,
+    .markdown-body h5,
+    .markdown-body h6 {
+      margin-top: 0;
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+    
+    .markdown-body h1 {
+      font-size: 30px;
+    }
+    
+    .markdown-body h2 {
+      font-size: 21px;
+    }
+    
+    .markdown-body h3 {
+      font-size: 16px;
+    }
+    
+    .markdown-body h4 {
+      font-size: 14px;
+    }
+    
+    .markdown-body h5 {
+      font-size: 12px;
+    }
+    
+    .markdown-body h6 {
+      font-size: 11px;
+    }
+    
+    .markdown-body p {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    
+    .markdown-body blockquote {
+      margin: 0;
+    }
+    
+    .markdown-body ul,
+    .markdown-body ol {
+      padding-left: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    
+    .markdown-body ol ol,
+    .markdown-body ul ol {
+      list-style-type: lower-roman;
+    }
+    
+    .markdown-body ul ul ol,
+    .markdown-body ul ol ol,
+    .markdown-body ol ul ol,
+    .markdown-body ol ol ol {
+      list-style-type: lower-alpha;
+    }
+    
+    .markdown-body dd {
+      margin-left: 0;
+    }
+    
+    .markdown-body code {
+      font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      font-size: 12px;
+    }
+    
+    .markdown-body pre {
+      margin-top: 0;
+      margin-bottom: 0;
+      font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    }
+    
+    .markdown-body .pl-0 {
+      padding-left: 0 !important;
+    }
+    
+    .markdown-body .pl-1 {
+      padding-left: 3px !important;
+    }
+    
+    .markdown-body .pl-2 {
+      padding-left: 6px !important;
+    }
+    
+    .markdown-body .pl-3 {
+      padding-left: 12px !important;
+    }
+    
+    .markdown-body .pl-4 {
+      padding-left: 24px !important;
+    }
+    
+    .markdown-body .pl-5 {
+      padding-left: 36px !important;
+    }
+    
+    .markdown-body .pl-6 {
+      padding-left: 48px !important;
+    }
+    
+    .markdown-body .form-select::-ms-expand {
+      opacity: 0;
+    }
+    
+    .markdown-body:before {
+      display: table;
+      content: "";
+    }
+    
+    .markdown-body:after {
+      display: table;
+      clear: both;
+      content: "";
+    }
+    
+    .markdown-body>*:first-child {
+      margin-top: 0 !important;
+    }
+    
+    .markdown-body>*:last-child {
+      margin-bottom: 0 !important;
+    }
+    
+    .markdown-body a:not([href]) {
+      color: inherit;
+      text-decoration: none;
+    }
+    
+    .markdown-body .anchor {
+      display: inline-block;
+      padding-right: 2px;
+      margin-left: -18px;
+    }
+    
+    .markdown-body .anchor:focus {
+      outline: none;
+    }
+    
+    .markdown-body h1,
+    .markdown-body h2,
+    .markdown-body h3,
+    .markdown-body h4,
+    .markdown-body h5,
+    .markdown-body h6 {
+      margin-top: 1em;
+      margin-bottom: 16px;
+      font-weight: bold;
+      line-height: 1.4;
+    }
+    
+    .markdown-body h1 .octicon-link,
+    .markdown-body h2 .octicon-link,
+    .markdown-body h3 .octicon-link,
+    .markdown-body h4 .octicon-link,
+    .markdown-body h5 .octicon-link,
+    .markdown-body h6 .octicon-link {
+      color: #000;
+      vertical-align: middle;
+      visibility: hidden;
+    }
+    
+    .markdown-body h1:hover .anchor,
+    .markdown-body h2:hover .anchor,
+    .markdown-body h3:hover .anchor,
+    .markdown-body h4:hover .anchor,
+    .markdown-body h5:hover .anchor,
+    .markdown-body h6:hover .anchor {
+      text-decoration: none;
+    }
+    
+    .markdown-body h1:hover .anchor .octicon-link,
+    .markdown-body h2:hover .anchor .octicon-link,
+    .markdown-body h3:hover .anchor .octicon-link,
+    .markdown-body h4:hover .anchor .octicon-link,
+    .markdown-body h5:hover .anchor .octicon-link,
+    .markdown-body h6:hover .anchor .octicon-link {
+      visibility: visible;
+    }
+    
+    .markdown-body h1 {
+      padding-bottom: 0.3em;
+      font-size: 2.25em;
+      line-height: 1.2;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .markdown-body h1 .anchor {
+      line-height: 1;
+    }
+    
+    .markdown-body h2 {
+      padding-bottom: 0.3em;
+      font-size: 1.75em;
+      line-height: 1.225;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .markdown-body h2 .anchor {
+      line-height: 1;
+    }
+    
+    .markdown-body h3 {
+      font-size: 1.5em;
+      line-height: 1.43;
+    }
+    
+    .markdown-body h3 .anchor {
+      line-height: 1.2;
+    }
+    
+    .markdown-body h4 {
+      font-size: 1.25em;
+    }
+    
+    .markdown-body h4 .anchor {
+      line-height: 1.2;
+    }
+    
+    .markdown-body h5 {
+      font-size: 1em;
+    }
+    
+    .markdown-body h5 .anchor {
+      line-height: 1.1;
+    }
+    
+    .markdown-body h6 {
+      font-size: 1em;
+      color: #777;
+    }
+    
+    .markdown-body h6 .anchor {
+      line-height: 1.1;
+    }
+    
+    .markdown-body p,
+    .markdown-body blockquote,
+    .markdown-body ul,
+    .markdown-body ol,
+    .markdown-body dl,
+    .markdown-body table,
+    .markdown-body pre {
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+    
+    .markdown-body hr {
+      height: 4px;
+      padding: 0;
+      margin: 16px 0;
+      background-color: #e7e7e7;
+      border: 0 none;
+    }
+    
+    .markdown-body ul,
+    .markdown-body ol {
+      padding-left: 2em;
+    }
+    
+    .markdown-body ul ul,
+    .markdown-body ul ol,
+    .markdown-body ol ol,
+    .markdown-body ol ul {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    
+    .markdown-body li>p {
+      margin-top: 16px;
+    }
+    
+    .markdown-body dl {
+      padding: 0;
+    }
+    
+    .markdown-body dl dt {
+      padding: 0;
+      margin-top: 16px;
+      font-size: 1em;
+      font-style: italic;
+      font-weight: bold;
+    }
+    
+    .markdown-body dl dd {
+      padding: 0 16px;
+      margin-bottom: 16px;
+    }
+    
+    .markdown-body blockquote {
+      padding: 0 15px;
+      color: #777;
+      border-left: 4px solid #ddd;
+    }
+    
+    .markdown-body blockquote>:first-child {
+      margin-top: 0;
+    }
+    
+    .markdown-body blockquote>:last-child {
+      margin-bottom: 0;
+    }
+    
+    .markdown-body table {
+      display: block;
+      width: 100%;
+      overflow: auto;
+      word-break: normal;
+      word-break: keep-all;
+    }
+    
+    .markdown-body table th {
+      font-weight: bold;
+    }
+    
+    .markdown-body table th,
+    .markdown-body table td {
+      padding: 6px 13px;
+      border: 1px solid #ddd;
+    }
+    
+    .markdown-body table tr {
+      background-color: #fff;
+      border-top: 1px solid #ccc;
+    }
+    
+    .markdown-body table tr:nth-child(2n) {
+      background-color: #f8f8f8;
+    }
+    
+    .markdown-body img {
+      max-width: 100%;
+      box-sizing: content-box;
+      background-color: #fff;
+    }
+    
+    .markdown-body code {
+      padding: 0;
+      padding-top: 0.2em;
+      padding-bottom: 0.2em;
+      margin: 0;
+      font-size: 85%;
+      background-color: rgba(0,0,0,0.04);
+      border-radius: 3px;
+    }
+    
+    .markdown-body code:before,
+    .markdown-body code:after {
+      letter-spacing: -0.2em;
+      content: "\00a0";
+    }
+    
+    .markdown-body pre>code {
+      padding: 0;
+      margin: 0;
+      font-size: 100%;
+      word-break: normal;
+      white-space: pre;
+      background: transparent;
+      border: 0;
+    }
+    
+    .markdown-body .highlight {
+      margin-bottom: 16px;
+    }
+    
+    .markdown-body .highlight pre,
+    .markdown-body pre {
+      padding: 16px;
+      overflow: auto;
+      font-size: 85%;
+      line-height: 1.45;
+      background-color: #f7f7f7;
+      border-radius: 3px;
+    }
+    
+    .markdown-body .highlight pre {
+      margin-bottom: 0;
+      word-break: normal;
+    }
+    
+    .markdown-body pre {
+      word-wrap: normal;
+    }
+    
+    .markdown-body pre code {
+      display: inline;
+      max-width: initial;
+      padding: 0;
+      margin: 0;
+      overflow: initial;
+      line-height: inherit;
+      word-wrap: normal;
+      background-color: transparent;
+      border: 0;
+    }
+    
+    .markdown-body pre code:before,
+    .markdown-body pre code:after {
+      content: normal;
+    }
+    
+    .markdown-body kbd {
+      display: inline-block;
+      padding: 3px 5px;
+      font-size: 11px;
+      line-height: 10px;
+      color: #555;
+      vertical-align: middle;
+      background-color: #fcfcfc;
+      border: solid 1px #ccc;
+      border-bottom-color: #bbb;
+      border-radius: 3px;
+      box-shadow: inset 0 -1px 0 #bbb;
+    }
+    
+    .markdown-body .pl-c {
+      color: #969896;
+    }
+    
+    .markdown-body .pl-c1,
+    .markdown-body .pl-s .pl-v {
+      color: #0086b3;
+    }
+    
+    .markdown-body .pl-e,
+    .markdown-body .pl-en {
+      color: #795da3;
+    }
+    
+    .markdown-body .pl-s .pl-s1,
+    .markdown-body .pl-smi {
+      color: #333;
+    }
+    
+    .markdown-body .pl-ent {
+      color: #63a35c;
+    }
+    
+    .markdown-body .pl-k {
+      color: #a71d5d;
+    }
+    
+    .markdown-body .pl-pds,
+    .markdown-body .pl-s,
+    .markdown-body .pl-s .pl-pse .pl-s1,
+    .markdown-body .pl-sr,
+    .markdown-body .pl-sr .pl-cce,
+    .markdown-body .pl-sr .pl-sra,
+    .markdown-body .pl-sr .pl-sre {
+      color: #183691;
+    }
+    
+    .markdown-body .pl-v {
+      color: #ed6a43;
+    }
+    
+    .markdown-body .pl-id {
+      color: #b52a1d;
+    }
+    
+    .markdown-body .pl-ii {
+      background-color: #b52a1d;
+      color: #f8f8f8;
+    }
+    
+    .markdown-body .pl-sr .pl-cce {
+      color: #63a35c;
+      font-weight: bold;
+    }
+    
+    .markdown-body .pl-ml {
+      color: #693a17;
+    }
+    
+    .markdown-body .pl-mh,
+    .markdown-body .pl-mh .pl-en,
+    .markdown-body .pl-ms {
+      color: #1d3e81;
+      font-weight: bold;
+    }
+    
+    .markdown-body .pl-mq {
+      color: #008080;
+    }
+    
+    .markdown-body .pl-mi {
+      color: #333;
+      font-style: italic;
+    }
+    
+    .markdown-body .pl-mb {
+      color: #333;
+      font-weight: bold;
+    }
+    
+    .markdown-body .pl-md {
+      background-color: #ffecec;
+      color: #bd2c00;
+    }
+    
+    .markdown-body .pl-mi1 {
+      background-color: #eaffea;
+      color: #55a532;
+    }
+    
+    .markdown-body .pl-mdr {
+      color: #795da3;
+      font-weight: bold;
+    }
+    
+    .markdown-body .pl-mo {
+      color: #1d3e81;
+    }
+    
+    .markdown-body kbd {
+      display: inline-block;
+      padding: 3px 5px;
+      font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      line-height: 10px;
+      color: #555;
+      vertical-align: middle;
+      background-color: #fcfcfc;
+      border: solid 1px #ccc;
+      border-bottom-color: #bbb;
+      border-radius: 3px;
+      box-shadow: inset 0 -1px 0 #bbb;
+    }
+    
+    .markdown-body .full-commit .btn-outline:not(:disabled):hover {
+      color: #4078c0;
+      border: 1px solid #4078c0;
+    }
+    
+    .markdown-body :checked+.radio-label {
+      position: relative;
+      z-index: 1;
+      border-color: #4078c0;
+    }
+    
+    .markdown-body .octicon {
+      display: inline-block;
+      vertical-align: text-top;
+      fill: currentColor;
+    }
+    
+    .markdown-body .task-list-item {
+      list-style-type: none;
+    }
+    
+    .markdown-body .task-list-item+.task-list-item {
+      margin-top: 3px;
+    }
+    
+    .markdown-body .task-list-item input {
+      margin: 0 0.2em 0.25em -1.6em;
+      vertical-align: middle;
+    }
+    
+    .markdown-body hr {
+      border-bottom-color: #eee;
+    }
+    </style>
+    <style>/**
+     * GitHub Gist Theme
+     * Author : Louis Barranqueiro - https://github.com/LouisBarranqueiro
+     */
+    
+    .hljs {
+      display: block;
+      background: white;
+      padding: 0.5em;
+      color: #333333;
+      overflow-x: auto;
+    }
+    
+    .hljs-comment,
+    .hljs-meta {
+      color: #969896;
+    }
+    
+    .hljs-string,
+    .hljs-variable,
+    .hljs-template-variable,
+    .hljs-strong,
+    .hljs-emphasis,
+    .hljs-quote {
+      color: #df5000;
+    }
+    
+    .hljs-keyword,
+    .hljs-selector-tag,
+    .hljs-type {
+      color: #a71d5d;
+    }
+    
+    .hljs-literal,
+    .hljs-symbol,
+    .hljs-bullet,
+    .hljs-attribute {
+      color: #0086b3;
+    }
+    
+    .hljs-section,
+    .hljs-name {
+      color: #63a35c;
+    }
+    
+    .hljs-tag {
+      color: #333333;
+    }
+    
+    .hljs-title,
+    .hljs-attr,
+    .hljs-selector-id,
+    .hljs-selector-class,
+    .hljs-selector-attr,
+    .hljs-selector-pseudo {
+      color: #795da3;
+    }
+    
+    .hljs-addition {
+      color: #55a532;
+      background-color: #eaffea;
+    }
+    
+    .hljs-deletion {
+      color: #bd2c00;
+      background-color: #ffecec;
+    }
+    
+    .hljs-link {
+      text-decoration: underline;
+    }
+    </style>
+    <style>
+        .markdown-body {
+            padding: 10px 30px;
+        }
+    </style>
+</html>

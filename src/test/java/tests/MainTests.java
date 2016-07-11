@@ -9,7 +9,7 @@ import java.util.List;
 public class MainTests extends Assert {
     @Test(expected = ArgumentExistsException.class)
     public void testAdding2IdenticalArgs() {
-        ArgumentParser parser = new ArgumentParser("my_cool_app", "some app description");
+        ArgumentParser parser = new ArgumentParser("my_cool_app", "some app description", "1.0");
         parser.addArgument(new Flag("-v", "some help", "VERBOSE"));
     }
 
@@ -63,7 +63,7 @@ public class MainTests extends Assert {
 
     @Test
     public void testParserWithOnlyOptionalPositionals() {
-        ArgumentParser parser = new ArgumentParser("my_cool_app", "some app description");
+        ArgumentParser parser = new ArgumentParser("my_cool_app", "some app description", "1.0");
         parser.addArgument(new Positional("help1", "a", Positional.Usage.OPTIONAL,
                 "defaultValue1"));
         parser.addArgument(new Positional("help2", "b", Positional.Usage.OPTIONAL,
@@ -84,12 +84,13 @@ public class MainTests extends Assert {
 
     @Test(expected = UnexpectedPositionalsException.class)
     public void testParsingUnexpectedPositionals() {
-        new ArgumentParser("my_cool_app", "some app description").run("a", "b", "c");
+        new ArgumentParser("my_cool_app", "some app description", "1.0").run("a", "b", "c");
     }
 
     private ArgumentParser makeTestParser() {
         ArgumentParser parser = new ArgumentParser("my_cool_app",
-                "Test application using JArgParse argument parser."
+                "Test application using JArgParse argument parser.",
+                "1.0"
         );
         parser.addArgument(new Positional("This is required positional argument",
                 "REQUIRED_VALUE"));
