@@ -1,4 +1,4 @@
-# JArgParse - quick tutorial
+# JArgParse
 
 ## Introduction
 JArgParse is a Java library for parsing command-line arguments. It's based on the Python module [`arparse`][1].
